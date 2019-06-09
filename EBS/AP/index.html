@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next gemini" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/header.jpeg?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/header.jpeg?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/header.jpeg?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="AP发票从AP发票到日记账12345678910111213141516171819202122232425262728293031323334353637383940414243444546SELECT Aia.Org_Id                业务实体id      ,Aia.Invoice_Id            发票id      ,Sup.Vendor_Name">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AP">
+<meta property="og:url" content="https://tationgh.github.io/EBS/AP/index.html">
+<meta property="og:site_name" content="Tation">
+<meta property="og:description" content="AP发票从AP发票到日记账12345678910111213141516171819202122232425262728293031323334353637383940414243444546SELECT Aia.Org_Id                业务实体id      ,Aia.Invoice_Id            发票id      ,Sup.Vendor_Name">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://tationgh.github.io/EBS/AP/AP.resources/6659AB6F-A7BC-4409-98DB-D1855ADFE829.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/AP/AP.resources/32B5DB49-0D27-496A-983C-61776113EA1F.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/AP/AP.resources/007DDBFD-6DE7-43A3-8CD0-BD8A64FB1923.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/AP/AP.resources/1378D006-F1D6-4EEC-98F3-770719BE963C.png">
+<meta property="og:updated_time" content="2019-06-09T07:24:15.429Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AP">
+<meta name="twitter:description" content="AP发票从AP发票到日记账12345678910111213141516171819202122232425262728293031323334353637383940414243444546SELECT Aia.Org_Id                业务实体id      ,Aia.Invoice_Id            发票id      ,Sup.Vendor_Name">
+<meta name="twitter:image" content="https://tationgh.github.io/EBS/AP/AP.resources/6659AB6F-A7BC-4409-98DB-D1855ADFE829.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://tationgh.github.io/EBS/AP/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>AP | Tation</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tation</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">个人博客，部分文章非基础教程而更像工具手册，随时欢迎与我交流：2012592020@qq.com</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时间线</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tationgh.github.io/EBS/AP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tation">
+      <meta itemprop="description" content="个人博客">
+      <meta itemprop="image" content="/images/header.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tation">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">AP
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-08 22:13:47" itemprop="dateCreated datePublished" datetime="2019-06-08T22:13:47+08:00">2019-06-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-09 15:24:15" itemprop="dateModified" datetime="2019-06-09T15:24:15+08:00">2019-06-09</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/EBS/" itemprop="url" rel="index"><span itemprop="name">EBS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="AP发票"><a href="#AP发票" class="headerlink" title="AP发票"></a>AP发票</h1><h2 id="从AP发票到日记账"><a href="#从AP发票到日记账" class="headerlink" title="从AP发票到日记账"></a>从AP发票到日记账</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Aia.Org_Id                业务实体<span class="keyword">id</span></span><br><span class="line">      ,Aia.Invoice_Id            发票<span class="keyword">id</span></span><br><span class="line">      ,Sup.Vendor_Name           供应商</span><br><span class="line">      ,Aia.Invoice_Num           发票编号</span><br><span class="line">      ,Aia.Invoice_Date          发票日期</span><br><span class="line">      ,Aia.Invoice_Currency_Code 发票币种</span><br><span class="line">      ,Aia.Invoice_Amount        发票额</span><br><span class="line">      ,Aila.Line_Number          行号</span><br><span class="line">      ,Alc.Displayed_Field       类型</span><br><span class="line">      ,Aila.Amount               行金额</span><br><span class="line">      ,Gjb.Name                  批名</span><br><span class="line">      ,Gjh.Name                  日记账名</span><br><span class="line">      ,Gjl.Je_Line_Num           日记账行号</span><br><span class="line">  <span class="keyword">FROM</span> Ap.Ap_Invoices_All Aia</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Ap.Ap_Suppliers Sup</span><br><span class="line">    <span class="keyword">ON</span> Sup.Vendor_Id = Aia.Vendor_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Ap.Ap_Invoice_Lines_All Aila</span><br><span class="line">    <span class="keyword">ON</span> Aila.Invoice_Id = Aia.Invoice_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Ap_Lookup_Codes Alc</span><br><span class="line">    <span class="keyword">ON</span> Alc.Lookup_Type = <span class="string">'INVOICE LINE TYPE'</span></span><br><span class="line">   <span class="keyword">AND</span> Alc.Lookup_Code = Aila.Line_Type_Lookup_Code</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Ap.Ap_Invoice_Distributions_All Aida</span><br><span class="line">    <span class="keyword">ON</span> Aida.Invoice_Id = Aila.Invoice_Id</span><br><span class="line">   <span class="keyword">AND</span> Aida.Invoice_Line_Number = Aila.Line_Number</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Xla.Xla_Events Xe <span class="comment">--子分类账</span></span><br><span class="line">    <span class="keyword">ON</span> Xe.Event_Id = Aida.Accounting_Event_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Xla.Xla_Transaction_Entities Xte <span class="comment">--会计事物处理实体</span></span><br><span class="line">    <span class="keyword">ON</span> Xte.Entity_Id = Xe.Entity_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Xla.Xla_Ae_Headers Xah <span class="comment">--子分类账头</span></span><br><span class="line">    <span class="keyword">ON</span> Xah.Event_Id = Xe.Event_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Xla.Xla_Ae_Lines Xal <span class="comment">--子分类账头</span></span><br><span class="line">    <span class="keyword">ON</span> Xal.Ae_Header_Id = Xah.Ae_Header_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Gl.Gl_Import_References Gir <span class="comment">--总帐参考</span></span><br><span class="line">    <span class="keyword">ON</span> Gir.Reference_5 = Xte.Entity_Id</span><br><span class="line">   <span class="keyword">AND</span> Gir.Reference_6 = Xe.Event_Id</span><br><span class="line">   <span class="keyword">AND</span> Gir.Reference_7 = Xah.Ae_Header_Id</span><br><span class="line">   <span class="keyword">AND</span> Gir.Reference_8 = Xal.Ae_Line_Num</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Gl.Gl_Je_Batches Gjb</span><br><span class="line">    <span class="keyword">ON</span> Gjb.Je_Batch_Id = Gir.Je_Batch_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Gl.Gl_Je_Headers Gjh</span><br><span class="line">    <span class="keyword">ON</span> Gjh.Je_Header_Id = Gir.Je_Header_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Gl.Gl_Je_Lines Gjl</span><br><span class="line">    <span class="keyword">ON</span> Gjl.Je_Header_Id = Gir.Je_Header_Id</span><br><span class="line">   <span class="keyword">AND</span> Gjl.Je_Line_Num = Gir.Je_Line_Num</span><br><span class="line"> <span class="keyword">WHERE</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line">   <span class="keyword">AND</span> Aia.Invoice_Num = <span class="string">'测试001'</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="AP.resources/6659AB6F-A7BC-4409-98DB-D1855ADFE829.png" alt="53823ff05736b2c67e054d2e0fb3be42"><br><img src="AP.resources/32B5DB49-0D27-496A-983C-61776113EA1F.png" alt="4b5568a036b6b4572e3385363798b579"></p>
+<h1 id="付款"><a href="#付款" class="headerlink" title="付款"></a>付款</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Aca.Amount            金额</span><br><span class="line">      ,Aca.Check_Date        日期</span><br><span class="line">      ,Aca.Check_Id          主键</span><br><span class="line">      ,Aca.Check_Number      编号</span><br><span class="line">      ,Aca.Currency_Code     币种</span><br><span class="line">      ,Aca.Checkrun_Name     付款处理请求</span><br><span class="line">      ,Alc.Description       状态</span><br><span class="line">      ,Aca.Vendor_Name       收款人名称</span><br><span class="line">      ,Aca.Vendor_Site_Code  地点</span><br><span class="line">      ,Aca.Bank_Account_Name 账户名称</span><br><span class="line">      ,Aca.Bank_Account_Num  账户</span><br><span class="line">      ,Aca.Cleared_Amount    结清额</span><br><span class="line">      ,Aca.Cleared_Date      结清日期</span><br><span class="line">       <span class="comment">--发票</span></span><br><span class="line">      ,Aia.Invoice_Num      发票编号</span><br><span class="line">      ,Aip.Amount           已付金额</span><br><span class="line">      ,Aip.Accounting_Date  Gl日期</span><br><span class="line">      ,Aia.Description      摘要</span><br><span class="line">  <span class="keyword">FROM</span> Ap.Ap_Checks_All Aca</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Ap_Lookup_Codes Alc</span><br><span class="line">    <span class="keyword">ON</span> Alc.Lookup_Type(+) = <span class="string">'CHECK STATE'</span></span><br><span class="line">   <span class="keyword">AND</span> Alc.Lookup_Code(+) = Aca.Status_Lookup_Code</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Ap.Ap_Invoice_Payments_All Aip</span><br><span class="line">    <span class="keyword">ON</span> Aip.Check_Id = Aca.Check_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Ap.Ap_Invoices_All Aia</span><br><span class="line">    <span class="keyword">ON</span> Aia.Invoice_Id = Aip.Invoice_Id</span><br><span class="line"> <span class="keyword">WHERE</span> Aca.Check_Number = <span class="string">'17499'</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="AP.resources/007DDBFD-6DE7-43A3-8CD0-BD8A64FB1923.png" alt="afff2d1f0318c5ce9cf3f19e7adb4f7d"></p>
+<h1 id="供应商"><a href="#供应商" class="headerlink" title="供应商"></a>供应商</h1><h2 id="供应商地点地址、银行"><a href="#供应商地点地址、银行" class="headerlink" title="供应商地点地址、银行"></a>供应商地点地址、银行</h2><p>先创建地址，再关联给不同OU的地点，银行和地点没有关联关系</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sup.Vendor_Id 供应商<span class="keyword">id</span></span><br><span class="line">      ,Sup.Segment1 供应商编码</span><br><span class="line">      ,Sup.Vendor_Name 供应商名称</span><br><span class="line">      ,Sup.Vendor_Name_Alt 供应商别名</span><br><span class="line">      ,Sup.Vendor_Type_Lookup_Code 供应商类型编码</span><br><span class="line">      ,Flv.Meaning 供应商类型</span><br><span class="line">      ,Ppf.Full_Name 员工名称</span><br><span class="line">      ,Hou.Name 业务实体</span><br><span class="line">      ,Assa.Vendor_Site_Id 供应商地点<span class="keyword">id</span></span><br><span class="line">      ,Assa.Vendor_Site_Code 供应商地点编码</span><br><span class="line">      ,Assa.Pay_Site_Flag 是否可支付</span><br><span class="line">      ,Assa.Vat_Code 税码</span><br><span class="line">      ,Assa.Inactive_Date 地点失效日期</span><br><span class="line">      ,Hps.Party_Site_Name 供应商地点名称</span><br><span class="line">      ,<span class="keyword">Decode</span>(Hps.Status, <span class="string">'A'</span>, <span class="string">'Y'</span>, <span class="string">'I'</span>, <span class="string">'N'</span>, <span class="string">''</span>) 地点状态</span><br><span class="line">      ,Hl.Country 国家</span><br><span class="line">      ,Hl.Province 省</span><br><span class="line">      ,Hl.City 市</span><br><span class="line">      ,Hl.County 区</span><br><span class="line">      ,Hl.Street 街道</span><br><span class="line">      ,Hl.Address1 || <span class="string">' '</span> || Hl.Address2 || <span class="string">' '</span> || Hl.Address3 || <span class="string">' '</span> || Hl.Address4 地址</span><br><span class="line">      ,Ibcount.Currency_Code 银行币种</span><br><span class="line">      ,Nvl(Ibcount.Bank_Account_Name, Sup.Vendor_Name) 开户名</span><br><span class="line">      ,Ibcount.Bank_Account_Num 银行账号</span><br><span class="line">      ,Bank_Hp.Party_Name 银行名称</span><br><span class="line">      ,Bank_Br_Hp.Party_Name 银行分行</span><br><span class="line">      ,Ibcount.Start_Date 银行帐户起始日期</span><br><span class="line">      ,Ibcount.End_Date 银行帐户终止日期</span><br><span class="line">      ,Ibcount.Primary_Flag <span class="keyword">AS</span> 账户主要责任人标识</span><br><span class="line">      ,Ibcount.Iao_End_Date <span class="keyword">AS</span> 账户责任人终止日期</span><br><span class="line">  <span class="keyword">FROM</span> Apps.Ap_Suppliers Sup</span><br><span class="line">  <span class="keyword">JOIN</span> Apps.Fnd_Lookup_Values Flv</span><br><span class="line">    <span class="keyword">ON</span> Flv.Lookup_Type = <span class="string">'VENDOR TYPE'</span></span><br><span class="line">   <span class="keyword">AND</span> Flv.Language = <span class="string">'ZHS'</span></span><br><span class="line">   <span class="keyword">AND</span> Flv.Lookup_Code = Sup.Vendor_Type_Lookup_Code</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Per_All_People_f Ppf</span><br><span class="line">    <span class="keyword">ON</span> Ppf.Person_Id = Sup.Employee_Id</span><br><span class="line">   <span class="keyword">AND</span> <span class="keyword">SYSDATE</span> <span class="keyword">BETWEEN</span> Ppf.Effective_Start_Date <span class="keyword">AND</span> Ppf.Effective_End_Date</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Ap_Supplier_Sites_All Assa <span class="comment">--地点关联表</span></span><br><span class="line">    <span class="keyword">ON</span> Assa.Vendor_Id = Sup.Vendor_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Hr_Operating_Units Hou</span><br><span class="line">    <span class="keyword">ON</span> Hou.Organization_Id = Assa.Org_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Hz_Party_Sites Hps <span class="comment">--地点表</span></span><br><span class="line">    <span class="keyword">ON</span> Hps.Party_Site_Id = Assa.Party_Site_Id</span><br><span class="line">   <span class="keyword">AND</span> Hps.Location_Id = Assa.Location_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Hz_Locations Hl <span class="comment">--地址表</span></span><br><span class="line">    <span class="keyword">ON</span> Hl.Location_Id = Assa.Location_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> (<span class="keyword">SELECT</span> Ieb.Bank_Id</span><br><span class="line">                   ,Ieb.Branch_Id</span><br><span class="line">                   ,Iep.Payee_Party_Id</span><br><span class="line">                   ,Ieb.Ext_Bank_Account_Id</span><br><span class="line">                   ,Ieb.Bank_Account_Name</span><br><span class="line">                   ,Ieb.Bank_Account_Num</span><br><span class="line">                   ,Uses.Start_Date</span><br><span class="line">                   ,Uses.End_Date</span><br><span class="line">                   ,Ieb.Currency_Code</span><br><span class="line">                   ,Iao.Primary_Flag</span><br><span class="line">                   ,Iao.End_Date Iao_End_Date</span><br><span class="line">                   ,Uses.Order_Of_Preference<span class="comment">--优先级</span></span><br><span class="line">               <span class="keyword">FROM</span> Apps.Iby_Pmt_Instr_Uses_All Uses <span class="comment">--银行帐户分配层次关系表  </span></span><br><span class="line">               <span class="keyword">JOIN</span> Apps.Iby_External_Payees_All Iep <span class="comment">--银行帐户分配层次关系明细表</span></span><br><span class="line">                 <span class="keyword">ON</span> Iep.Party_Site_Id <span class="keyword">IS</span> <span class="literal">NULL</span></span><br><span class="line">                <span class="keyword">AND</span> Iep.Supplier_Site_Id <span class="keyword">IS</span> <span class="literal">NULL</span></span><br><span class="line">                <span class="keyword">AND</span> Iep.Org_Id <span class="keyword">IS</span> <span class="literal">NULL</span></span><br><span class="line">                <span class="keyword">AND</span> Iep.Payment_Function = <span class="string">'PAYABLES_DISB'</span></span><br><span class="line">                <span class="keyword">AND</span> Iep.Ext_Payee_Id = Uses.Ext_Pmt_Party_Id</span><br><span class="line">                <span class="keyword">AND</span> Uses.Instrument_Type = <span class="string">'BANKACCOUNT'</span></span><br><span class="line">                <span class="keyword">AND</span> Iep.Payment_Function = Uses.Payment_Function</span><br><span class="line">               <span class="keyword">JOIN</span> Apps.Iby_Ext_Bank_Accounts Ieb <span class="comment">--银行帐户信息表</span></span><br><span class="line">                 <span class="keyword">ON</span> Ieb.Ext_Bank_Account_Id = Uses.Instrument_Id</span><br><span class="line">               <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Iby_Account_Owners Iao <span class="comment">--帐户责任人表</span></span><br><span class="line">                 <span class="keyword">ON</span> Iao.Account_Owner_Party_Id = Iep.Payee_Party_Id</span><br><span class="line">                <span class="keyword">AND</span> Iao.Ext_Bank_Account_Id = Ieb.Ext_Bank_Account_Id</span><br><span class="line">              <span class="keyword">WHERE</span> <span class="number">1</span> = <span class="number">1</span>) Ibcount</span><br><span class="line">    <span class="keyword">ON</span> Ibcount.Payee_Party_Id = Sup.Party_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Hz_Parties Bank_Hp</span><br><span class="line">    <span class="keyword">ON</span> Ibcount.Bank_Id = Bank_Hp.Party_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Hz_Parties Bank_Br_Hp</span><br><span class="line">    <span class="keyword">ON</span> Ibcount.Branch_Id = Bank_Br_Hp.Party_Id</span><br><span class="line"> <span class="keyword">WHERE</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line">   <span class="keyword">AND</span> Sup.Vendor_Id = <span class="number">1528</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="供应商联系人"><a href="#供应商联系人" class="headerlink" title="供应商联系人"></a>供应商联系人</h2><p>创建联系人后，可以关联到多个地点</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sup.Vendor_Id 供应商<span class="keyword">id</span></span><br><span class="line">      ,Sup.Segment1 供应商编码</span><br><span class="line">      ,Sup.Vendor_Name 供应商名称</span><br><span class="line">      ,Sup.Vendor_Name_Alt 供应商别名</span><br><span class="line">      ,Ctc.Contact_Person 供应商联系人</span><br><span class="line">      ,Ctc.Phone_Number 联系人电话</span><br><span class="line">      ,Ctc.Fax_Phone_Area_Code 联系人传真</span><br><span class="line">      ,Ctc.Fax_Phone_Number 联系人手机</span><br><span class="line">      ,Ttt.Party_Site_Name 供应商地点名称</span><br><span class="line">      ,Ttt.Address1 || Ttt.Address2 || Ttt.Address3 || Ttt.Address4 地址</span><br><span class="line">  <span class="keyword">FROM</span> Apps.Ap_Suppliers Sup</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Fnd_Lookup_Values Flv</span><br><span class="line">    <span class="keyword">ON</span> Sup.Vendor_Type_Lookup_Code = Flv.Lookup_Code</span><br><span class="line">   <span class="keyword">AND</span> Flv.Lookup_Type = <span class="string">'VENDOR TYPE'</span></span><br><span class="line">   <span class="keyword">AND</span> Flv.Language = <span class="string">'ZHS'</span></span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> (<span class="keyword">SELECT</span> Hr.Relationship_Id</span><br><span class="line">                   ,Hr.Directional_Flag</span><br><span class="line">                   ,Hr.Subject_Id Subject_Id</span><br><span class="line">                   ,Hr.Object_Id Object_Id</span><br><span class="line">                   ,Hr.Party_Id Party_Id</span><br><span class="line">                   ,Hp.Person_Last_Name Contact_Person</span><br><span class="line">                   ,Hp.Person_First_Name Contact_Title</span><br><span class="line">                   ,Hcpp.Phone_Area_Code Phone_Area_Code</span><br><span class="line">                   ,Hcpp.Phone_Number Phone_Number</span><br><span class="line">                   ,Hcpp.Phone_Extension Phone_Extension</span><br><span class="line">                   ,Hcpf.Phone_Area_Code Fax_Phone_Area_Code</span><br><span class="line">                   ,Hcpf.Phone_Number Fax_Phone_Number</span><br><span class="line">                   ,Hr.End_Date</span><br><span class="line">                   ,Hoc.Job_Title Job_Title</span><br><span class="line">                   ,Hoc.Department Department</span><br><span class="line">                   ,<span class="keyword">Greatest</span>(Nvl(Hr.Last_Update_Date, <span class="keyword">To_Date</span>(<span class="string">'1990101'</span>, <span class="string">'YYYYMMDD'</span>))</span><br><span class="line">                            ,Nvl(Hcpp.Last_Update_Date, <span class="keyword">To_Date</span>(<span class="string">'1990101'</span>, <span class="string">'YYYYMMDD'</span>))</span><br><span class="line">                            ,Nvl(Hcpf.Last_Update_Date, <span class="keyword">To_Date</span>(<span class="string">'1990101'</span>, <span class="string">'YYYYMMDD'</span>))</span><br><span class="line">                            ,Nvl(Hp.Last_Update_Date, <span class="keyword">To_Date</span>(<span class="string">'1990101'</span>, <span class="string">'YYYYMMDD'</span>))) Last_Update_Date</span><br><span class="line">               <span class="keyword">FROM</span> Apps.Hz_Relationships  Hr</span><br><span class="line">                   ,Apps.Hz_Contact_Points Hcpp</span><br><span class="line">                   ,Apps.Hz_Contact_Points Hcpf</span><br><span class="line">                   ,Apps.Hz_Parties        Hp</span><br><span class="line">                   ,Apps.Hz_Org_Contacts   Hoc</span><br><span class="line">              <span class="keyword">WHERE</span> Hr.Object_Id = Hp.Party_Id</span><br><span class="line">                <span class="keyword">AND</span> Hcpp.Owner_Table_Id(+) = Hr.Party_Id</span><br><span class="line">                <span class="keyword">AND</span> Hcpf.Owner_Table_Id(+) = Hr.Party_Id</span><br><span class="line">                <span class="keyword">AND</span> Hr.Object_Type = <span class="string">'PERSON'</span></span><br><span class="line">                <span class="keyword">AND</span> Hr.Relationship_Code(+) = <span class="string">'CONTACT'</span></span><br><span class="line">                <span class="keyword">AND</span> Hcpp.Owner_Table_Name(+) = <span class="string">'HZ_PARTIES'</span></span><br><span class="line">                <span class="keyword">AND</span> Hcpf.Owner_Table_Name(+) = <span class="string">'HZ_PARTIES'</span></span><br><span class="line">                <span class="keyword">AND</span> Hcpp.Contact_Point_Type(+) = <span class="string">'PHONE'</span></span><br><span class="line">                <span class="keyword">AND</span> Hcpp.Phone_Line_Type(+) = <span class="string">'GEN'</span></span><br><span class="line">                <span class="keyword">AND</span> Hcpp.Status(+) = <span class="string">'A'</span></span><br><span class="line">                <span class="keyword">AND</span> Hcpf.Contact_Point_Type(+) = <span class="string">'PHONE'</span></span><br><span class="line">                <span class="keyword">AND</span> Hcpf.Phone_Line_Type(+) = <span class="string">'FAX'</span></span><br><span class="line">                <span class="keyword">AND</span> Hcpf.Status(+) = <span class="string">'A'</span></span><br><span class="line">                <span class="keyword">AND</span> Hr.Relationship_Id = Hoc.Party_Relationship_Id(+)) Ctc</span><br><span class="line">    <span class="keyword">ON</span> Sup.Party_Id = Ctc.Subject_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> (<span class="keyword">SELECT</span> Hps.Party_Site_Name</span><br><span class="line">                   ,Hl.Address1</span><br><span class="line">                   ,Hl.Address2</span><br><span class="line">                   ,Hl.Address3</span><br><span class="line">                   ,Hl.Address4</span><br><span class="line">                   ,Hl.City City</span><br><span class="line">                   ,Hl.County County</span><br><span class="line">                   ,Hl.State State</span><br><span class="line">                   ,Hl.Province Province</span><br><span class="line">                   ,Hl.Postal_Code Postal_Code</span><br><span class="line">                   ,Hl.Country Country</span><br><span class="line">                   ,Apps.Pos_Profile_Change_Request_Pkg.Format_Address(Hl.Address1</span><br><span class="line">                                                                      ,Hl.Address2</span><br><span class="line">                                                                      ,Hl.Address3</span><br><span class="line">                                                                      ,Hl.Address4</span><br><span class="line">                                                                      ,Hl.City</span><br><span class="line">                                                                      ,Hl.Postal_Code</span><br><span class="line">                                                                      ,Hl.State</span><br><span class="line">                                                                      ,Hl.Province</span><br><span class="line">                                                                      ,Hl.County</span><br><span class="line">                                                                      ,Hl.Country) Address_Details</span><br><span class="line">                   ,To_Number(<span class="literal">NULL</span>) Lov_Swr</span><br><span class="line">                   ,Hps.Party_Site_Id</span><br><span class="line">                   ,To_Number(<span class="literal">NULL</span>) Contact_Req_Id</span><br><span class="line">                   ,Hzr.Subject_Id</span><br><span class="line">                   ,Hps.Party_Site_Id Party_Address_Id</span><br><span class="line">                   ,Hl.Location_Id</span><br><span class="line">                   ,Hps.Party_Id</span><br><span class="line">                   ,Apps.Fnd_Message.Get_String(<span class="string">'POS'</span>, <span class="string">'POS_SP_STATUS_CURRENT'</span>) <span class="keyword">Status</span></span><br><span class="line">                   ,<span class="string">'Current'</span> Image_Swr</span><br><span class="line">                   ,Hzr.Subject_Type</span><br><span class="line">                   ,Hzr.Subject_Table_Name</span><br><span class="line">                   ,Hzr.Relationship_Id</span><br><span class="line">               <span class="keyword">FROM</span> Apps.Hz_Party_Sites   Hps</span><br><span class="line">                   ,Apps.Hz_Locations     Hl</span><br><span class="line">                   ,Apps.Hz_Relationships Hzr</span><br><span class="line">              <span class="keyword">WHERE</span> Hps.Location_Id = Hl.Location_Id</span><br><span class="line">                <span class="keyword">AND</span> Nvl(Hps.End_Date_Active, <span class="keyword">SYSDATE</span>) &gt;= <span class="keyword">SYSDATE</span></span><br><span class="line">                <span class="keyword">AND</span> Hzr.Relationship_Type = <span class="string">'CONTACT'</span></span><br><span class="line">                <span class="keyword">AND</span> Hzr.Relationship_Code = <span class="string">'CONTACT_OF'</span></span><br><span class="line">                <span class="keyword">AND</span> Hzr.Subject_Type = <span class="string">'PERSON'</span></span><br><span class="line">                <span class="keyword">AND</span> Hzr.Subject_Table_Name = <span class="string">'HZ_PARTIES'</span></span><br><span class="line">                <span class="keyword">AND</span> Hzr.Object_Type = <span class="string">'ORGANIZATION'</span></span><br><span class="line">                <span class="keyword">AND</span> Hzr.Object_Table_Name = <span class="string">'HZ_PARTIES'</span></span><br><span class="line">                <span class="keyword">AND</span> Hzr.Status = <span class="string">'A'</span></span><br><span class="line">                <span class="keyword">AND</span> Hps.Party_Id = Hzr.Object_Id</span><br><span class="line">                <span class="keyword">AND</span> <span class="keyword">EXISTS</span></span><br><span class="line">              (<span class="keyword">SELECT</span> <span class="number">1</span></span><br><span class="line">                       <span class="keyword">FROM</span> Apps.Ap_Supplier_Contacts Ascs</span><br><span class="line">                      <span class="keyword">WHERE</span> (Ascs.Inactive_Date <span class="keyword">IS</span> <span class="literal">NULL</span> <span class="keyword">OR</span> Ascs.Inactive_Date &gt; <span class="keyword">SYSDATE</span>)</span><br><span class="line">                        <span class="keyword">AND</span> Hzr.Relationship_Id = Ascs.Relationship_Id</span><br><span class="line">                        <span class="keyword">AND</span> Hzr.Party_Id = Ascs.Rel_Party_Id</span><br><span class="line">                        <span class="keyword">AND</span> Hps.Party_Site_Id = Ascs.Org_Party_Site_Id</span><br><span class="line">                        <span class="keyword">AND</span> Hzr.Subject_Id = Ascs.Per_Party_Id)) Ttt</span><br><span class="line">    <span class="keyword">ON</span> Sup.Party_Id = Ttt.Party_Id</span><br><span class="line">   <span class="keyword">AND</span> Ctc.Object_Id = Ttt.Subject_Id</span><br><span class="line"> <span class="keyword">WHERE</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line">   <span class="keyword">AND</span> Contact_Req_Id <span class="keyword">IS</span> <span class="literal">NULL</span></span><br><span class="line">   <span class="keyword">AND</span> Sup.Vendor_Id = <span class="number">1528</span>;</span><br></pre></td></tr></table></figure>
+
+<h1 id="付款条件"><a href="#付款条件" class="headerlink" title="付款条件"></a>付款条件</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Att.Term_Id            付款条件<span class="keyword">id</span></span><br><span class="line">      ,Att.Name               名称</span><br><span class="line">      ,Att.Description        摘要</span><br><span class="line">      ,Att.Due_Cutoff_Day     截止日</span><br><span class="line">      ,Att.Rank               等级</span><br><span class="line">      ,Att.Start_Date_Active  有效日期从</span><br><span class="line">      ,Att.End_Date_Active    有效日期至</span><br><span class="line">      ,Att.Attribute1         是否涉及预付款</span><br><span class="line">      ,Atl.Due_Percent        <span class="string">"到期%"</span></span><br><span class="line">      ,Atl.Due_Amount         金额</span><br><span class="line">      ,Atl.Calendar           日历</span><br><span class="line">      ,Atl.Fixed_Date         固定日期</span><br><span class="line">      ,Atl.Due_Days           天数</span><br><span class="line">      ,Atl.Due_Day_Of_Month   日</span><br><span class="line">      ,Atl.Due_Months_Forward 提前月数</span><br><span class="line">  <span class="keyword">FROM</span> Ap.Ap_Terms_Tl Att</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Ap.Ap_Terms_Lines Atl</span><br><span class="line">    <span class="keyword">ON</span> Atl.Term_Id = Att.Term_Id</span><br><span class="line"> <span class="keyword">WHERE</span> Att.Language = <span class="string">'ZHS'</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="AP.resources/1378D006-F1D6-4EEC-98F3-770719BE963C.png" alt="51a3144b1caf2467c3756c569ba0d265"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/EBS/APP/" rel="next" title="APP">
+                <i class="fa fa-chevron-left"></i> APP
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Tools/008-Nexus/" rel="prev" title="008-Nexus">
+                008-Nexus <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDYzNC8yMTE2Mw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpeg" alt="Tation">
+            
+              <p class="site-author-name" itemprop="name">Tation</p>
+              <div class="site-description motion-element" itemprop="description">个人博客</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AP发票"><span class="nav-number">1.</span> <span class="nav-text">AP发票</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从AP发票到日记账"><span class="nav-number">1.1.</span> <span class="nav-text">从AP发票到日记账</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#付款"><span class="nav-number">2.</span> <span class="nav-text">付款</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#供应商"><span class="nav-number">3.</span> <span class="nav-text">供应商</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#供应商地点地址、银行"><span class="nav-number">3.1.</span> <span class="nav-text">供应商地点地址、银行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#供应商联系人"><span class="nav-number">3.2.</span> <span class="nav-text">供应商联系人</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#付款条件"><span class="nav-number">4.</span> <span class="nav-text">付款条件</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tation</span>
+
+  
+
+  
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'EBS/AP/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

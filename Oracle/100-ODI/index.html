@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next gemini" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/header.jpeg?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/header.jpeg?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/header.jpeg?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="简介ODI（Oracle Date Integrator）是Oracle Fusion MiddleWare的一个组件，它可以实现不同以及相同异构数据源之间的数据同步与集成。ODI的架构中，主要有以下的对象：Repository 仓库、Studio 工作室、Agent 代理、Console 工作台1、Repository分为2种类型：Master和Work。Master库主要用于存储拓扑信息及对W">
+<meta property="og:type" content="article">
+<meta property="og:title" content="100-ODI">
+<meta property="og:url" content="https://tationgh.github.io/Oracle/100-ODI/index.html">
+<meta property="og:site_name" content="Tation">
+<meta property="og:description" content="简介ODI（Oracle Date Integrator）是Oracle Fusion MiddleWare的一个组件，它可以实现不同以及相同异构数据源之间的数据同步与集成。ODI的架构中，主要有以下的对象：Repository 仓库、Studio 工作室、Agent 代理、Console 工作台1、Repository分为2种类型：Master和Work。Master库主要用于存储拓扑信息及对W">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/F65AD1B1-DEDC-4BC5-BDAD-2162F049EB55.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/8A9BA533-05AE-4DD9-A0B3-BB6A4BA8DCCE.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/28253827-5209-4294-8204-D817721C8A4A.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/E7B89879-32A3-44B7-82A3-A51D3925AD12.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/48E3D587-DCB7-4629-B00C-1406F1DF0F95.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/0EBB1A66-2E0F-4610-831E-ECFFEE8931B5.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/F5BD69AE-E362-4F7A-983E-A46AF2F03B9C.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/82B2C908-218A-4D9A-8473-C887927B3BED.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/D2FBEEB0-418B-449C-91BA-A79998D04197.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/545631CC-391B-4A29-97C1-3F7FE89179C4.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/DC91DBB3-3EA2-4007-BA1C-3A5F1A2117ED.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/A010FA60-F94D-40F2-A364-FB6FBABD8F93.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/D44AAAFD-8CCD-4A58-9E41-9E3749CFE4C9.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/1EEA774D-3783-4AF1-A367-05AF14AC5BC8.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/3D18FA11-642C-4F70-9A24-CD640F6EB5DB.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/84D066D7-5F3A-4A3A-A794-C5547B825354.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/739A0D3D-8D0B-401C-B3D7-1013D71101EB.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/9E750779-ADC9-4354-BE48-A0F5CD5B764B.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/CB2654F2-CC87-4074-BEEC-44EE1322A203.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/C83CD3B5-8D2D-4128-963E-A127026DFD99.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/007EDB4E-3862-4192-AD53-CC31D11B6495.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/BED40E6D-94B0-4823-BCF3-624B478B9889.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/3872BD65-3A6B-40EB-8D60-4DC4AB33410B.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/448E8F90-AD75-4C06-B0AF-15F987E767C8.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/AB0837ED-8B02-460F-8642-881C4A9DE954.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/F471E09D-4291-4C00-BB5D-F74EB3D7D948.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/BB6B72F1-08CA-409B-A8B1-1124F6C64302.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/D104240E-8749-40E6-98DB-63F8954BF9FB.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/6D6F921E-3922-43A2-87CC-B09009943F56.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/BF8693DE-2535-4975-A439-C9DCA46EAE5A.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/69714496-CA83-42DA-8EE6-290AFCB20BBB.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/C972A8F7-7155-4DEE-9F2B-56443B61C849.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/94AB7D51-72A3-496E-A769-78DB30829718.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/BFEC4B32-5271-456E-B32D-1EDC0426C204.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/2EF3D65C-E9CA-45F4-BAC3-E9B027D47BE7.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/BE709A76-3BEE-4960-A81F-4DA64C22D087.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/1E18A723-666F-49CF-9155-21A57EB77368.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/04402129-4A16-4EE4-8DCF-E3C054E98D4E.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/A7162840-B1D3-4F77-9129-E31F141B2247.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/6F7AB980-9A3B-49EE-A9CE-0FC94E6FA80E.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/4B8B0A31-2C24-4FBB-921E-C0E5CA419E5C.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/C86DD817-7490-4DD5-80C7-CA4608C43F80.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/9F4D4775-940B-4818-B0CC-4C1CEAF9087B.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/5DE628BD-1993-42D7-8E98-73AD14A91618.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/41BB8E21-DAC8-4DC9-920C-1FF4B44B1F04.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/AD7BBA41-E540-4FE5-97D3-1F936ED4BD9A.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/7B60CF51-2BF8-4A3A-8624-F8A1D0A9B0A5.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/E0AF219D-E0FC-4AEE-9219-B1A2033967A1.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/D381D842-12F0-4E07-83F9-D79E642F3F8F.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/86033E78-A07B-4673-A7F2-01C85015887E.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/473023DA-885D-47B3-A311-3C07F795AAF0.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/170EB394-4FEC-4DCC-B4EC-626BB735B6E6.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/99E53A1C-B656-45F1-9C1A-377080F8BA05.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/3A6AFD77-9F81-4E04-AC5E-BE9C51ED2BCA.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/57136236-4F29-44A8-B896-259DA98A911D.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/3AFB7410-9F43-4058-A1E3-705A7CFA7448.png">
+<meta property="og:updated_time" content="2019-06-09T07:09:27.412Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="100-ODI">
+<meta name="twitter:description" content="简介ODI（Oracle Date Integrator）是Oracle Fusion MiddleWare的一个组件，它可以实现不同以及相同异构数据源之间的数据同步与集成。ODI的架构中，主要有以下的对象：Repository 仓库、Studio 工作室、Agent 代理、Console 工作台1、Repository分为2种类型：Master和Work。Master库主要用于存储拓扑信息及对W">
+<meta name="twitter:image" content="https://tationgh.github.io/Oracle/100-ODI/100-ODI.resources/F65AD1B1-DEDC-4BC5-BDAD-2162F049EB55.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://tationgh.github.io/Oracle/100-ODI/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>100-ODI | Tation</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tation</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">个人博客，部分文章非基础教程而更像工具手册，随时欢迎与我交流：2012592020@qq.com</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时间线</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tationgh.github.io/Oracle/100-ODI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tation">
+      <meta itemprop="description" content="个人博客">
+      <meta itemprop="image" content="/images/header.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tation">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">100-ODI
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-08 22:13:47" itemprop="dateCreated datePublished" datetime="2019-06-08T22:13:47+08:00">2019-06-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-09 15:09:27" itemprop="dateModified" datetime="2019-06-09T15:09:27+08:00">2019-06-09</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>ODI（Oracle Date Integrator）是Oracle Fusion MiddleWare的一个组件，它可以实现不同以及相同异构数据源之间的数据同步与集成。<br>ODI的架构中，主要有以下的对象：Repository 仓库、Studio 工作室、Agent 代理、Console 工作台<br>1、Repository分为2种类型：Master和Work。<br>Master库主要用于存储拓扑信息及对Work库的版本控制，用户权限控制等的管理。<br>Work库是定义的各种用于ETL转换的对象，是实际的Project库。里面可以存储各种结构与对象。比如Project，Model，Interface，Workflow等等信息。可以基于Work库的这个特点，可以新建不同的Work，分别用于DEV，Exec等不同用途的库。达到以目的操作对应的库，方便设计权限等。尽可能独立存储，单独的Instance，或单独的Schema。<br>2、Agent<br>实际执行者的代理人角色。所要执行的SQL语句通过代理，首先连接到要执行的DB服务器，然后发送要执行的代码进行执行，并将结果发送到目标数据库。<br>Agent接受多种执行方式：Studio，Console，命令行，Web Service，ODI Schedules<br>环境说明：</p>
+<ol>
+<li>Win10(64位)</li>
+<li>ODI 11G</li>
+<li>JDK 1.8（64位）</li>
+</ol>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装前设置setup.exe兼容性win7和管理员权限，安装过程中无特殊说明默认设置即可<br><img src="100-ODI.resources/F65AD1B1-DEDC-4BC5-BDAD-2162F049EB55.png" alt="c7aaea7160972b2278674c1373c04137"><br><img src="100-ODI.resources/8A9BA533-05AE-4DD9-A0B3-BB6A4BA8DCCE.png" alt="d98715fc2d6686bcf048fa0bb34c98ad"><br><img src="100-ODI.resources/28253827-5209-4294-8204-D817721C8A4A.png" alt="b7e8c5134853be43b6ab5d47810527b6"><br>安装过程中会出现会要求选择第二个安装盘路径<br><img src="100-ODI.resources/E7B89879-32A3-44B7-82A3-A51D3925AD12.png" alt="ab9720b75bc585d3816a7401048c96fa"></p>
+<h1 id="登陆配置"><a href="#登陆配置" class="headerlink" title="登陆配置"></a>登陆配置</h1><h2 id="创建主资料档案库"><a href="#创建主资料档案库" class="headerlink" title="创建主资料档案库"></a>创建主资料档案库</h2><p>先在ORACLE下拟先用orcl数据库用system用户，创建一个主资料档案库用户的数据库用户C##ODI_MASTER<br>创建完进入ODI，新建-&gt;主资料档案库创建向导<br><img src="100-ODI.resources/48E3D587-DCB7-4629-B00C-1406F1DF0F95.png" alt="1af4c69c48290562a0b4098702430dd7"><br><img src="100-ODI.resources/0EBB1A66-2E0F-4610-831E-ECFFEE8931B5.png" alt="421d6d84a62e12b76bc3270334b36c53"><br><img src="100-ODI.resources/F5BD69AE-E362-4F7A-983E-A46AF2F03B9C.png" alt="b52ef1f025b53ef96fc71607891d71ee"></p>
+<h2 id="创建主资料档案库-登录用户"><a href="#创建主资料档案库-登录用户" class="headerlink" title="创建主资料档案库-登录用户"></a>创建主资料档案库-登录用户</h2><p>上一步已经把ODI的系统配置导入到C##ODI_MASTER，现在开始创建基于此用户的ODI登陆用户<br><img src="100-ODI.resources/82B2C908-218A-4D9A-8473-C887927B3BED.png" alt="a70e7f43b76c379cc0a6e0976da28caf"><br><img src="100-ODI.resources/D2FBEEB0-418B-449C-91BA-A79998D04197.png" alt="a28b54699c33460b82d8838dcf26fa22"><br>重复上一步，继续再创建一个开发工作使用的登陆用户<br><img src="100-ODI.resources/545631CC-391B-4A29-97C1-3F7FE89179C4.png" alt="380efbce61068d615a30188587948692"></p>
+<h2 id="创建开发工作资料档案库"><a href="#创建开发工作资料档案库" class="headerlink" title="创建开发工作资料档案库"></a>创建开发工作资料档案库</h2><p>在ORACLE下登陆system用户下创建工作资料档案库的用户C##ODI_WORK<br>登陆ODI主资料档案库用户后，选择拓扑-&gt;资料档案库-&gt;新建工作资料档案库<br><img src="100-ODI.resources/DC91DBB3-3EA2-4007-BA1C-3A5F1A2117ED.png" alt="2c214b363b8d039ebd79088d4be68593"><br><img src="100-ODI.resources/A010FA60-F94D-40F2-A364-FB6FBABD8F93.png" alt="0fb21faea1be0b41ec88c283963314a0"><br><img src="100-ODI.resources/D44AAAFD-8CCD-4A58-9E41-9E3749CFE4C9.png" alt="46efc0a5afe01c997695f83d8a44ac0f"><br><img src="100-ODI.resources/1EEA774D-3783-4AF1-A367-05AF14AC5BC8.png" alt="07c59c924d5c54ffb55874675d394874"><br>创建完成后重新登录ODI ，选择开发工作资料档案库用户，点击编辑信息，将工作资料档案库选上即可，确认后登陆即可<br><img src="100-ODI.resources/3D18FA11-642C-4F70-9A24-CD640F6EB5DB.png" alt="9ef06d0fb3f56423890a14aee7a4d045"><br><img src="100-ODI.resources/84D066D7-5F3A-4A3A-A794-C5547B825354.png" alt="9629d03cf3898849397cf2a8e63f365d"></p>
+<h1 id="数据库对接配置"><a href="#数据库对接配置" class="headerlink" title="数据库对接配置"></a>数据库对接配置</h1><h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>简略写下创建源数据库SOURCE和目标数据库TARGET用于测试<br><img src="100-ODI.resources/739A0D3D-8D0B-401C-B3D7-1013D71101EB.png" alt="da65accb8e57498c4e3574343968e569"><br><img src="100-ODI.resources/9E750779-ADC9-4354-BE48-A0F5CD5B764B.png" alt="04a7eccc1dbb024738d77671ab7272a2"><br><img src="100-ODI.resources/CB2654F2-CC87-4074-BEEC-44EE1322A203.png" alt="730b3dc3bbaf3f7f099c485967126c67"></p>
+<h2 id="创建数据服务器"><a href="#创建数据服务器" class="headerlink" title="创建数据服务器"></a>创建数据服务器</h2><p>拓扑-&gt;物理体系结构-&gt;Oracle 选中右键选择新建数据服务器<br>建立SOURCE的数据服务器，保存时提示警告先忽略不管<br><img src="100-ODI.resources/C83CD3B5-8D2D-4128-963E-A127026DFD99.png" alt="92ab6ed91c8f3bd8913978c9c27fb933"><br><img src="100-ODI.resources/007EDB4E-3862-4192-AD53-CC31D11B6495.png" alt="76288d61f6a335e4db5f53741a42617f"><br>复上一步，再建立TARGET的数据服务器<br><img src="100-ODI.resources/BED40E6D-94B0-4823-BCF3-624B478B9889.png" alt="a6f214d153a374eb08311cb55515a3c7"><br><img src="100-ODI.resources/3872BD65-3A6B-40EB-8D60-4DC4AB33410B.png" alt="4afc6a808fd063fb8b423dbe098a8ab5"><br>在刚建立的两个数据服务器上，分别右键新建两个物理方案<br><img src="100-ODI.resources/448E8F90-AD75-4C06-B0AF-15F987E767C8.png" alt="940b1892ec87ce2fe465a07b59e86113"><br><img src="100-ODI.resources/AB0837ED-8B02-460F-8642-881C4A9DE954.png" alt="23da8de4f7d38d5540cdc23a32ecce8c"></p>
+<h2 id="创建逻辑方案"><a href="#创建逻辑方案" class="headerlink" title="创建逻辑方案"></a>创建逻辑方案</h2><p>拓扑-&gt;逻辑体系结构-&gt;新建逻辑方案，选择刚建立的物理方案<br><img src="100-ODI.resources/F471E09D-4291-4C00-BB5D-F74EB3D7D948.png" alt="952d0d59ad589a8c0ef120ce70fc969b"><br><img src="100-ODI.resources/BB6B72F1-08CA-409B-A8B1-1124F6C64302.png" alt="a0405df7ecce9f9b9af8e73e00abad1a"></p>
+<h2 id="创建模型"><a href="#创建模型" class="headerlink" title="创建模型"></a>创建模型</h2><p>模型用于将数据库表映射到ODI<br><img src="100-ODI.resources/D104240E-8749-40E6-98DB-63F8954BF9FB.png" alt="213d30a0d8ce6335fd48dc015d18a58c"><br>因为库中表较多，所以我们指定表进行逆向工程<br><img src="100-ODI.resources/6D6F921E-3922-43A2-87CC-B09009943F56.png" alt="81efa7d2e0cbcde71fd654b3feaefe9d"><br>将SOURCE和TARGET的表分别通过逆向工程导入ODI<br><img src="100-ODI.resources/BF8693DE-2535-4975-A439-C9DCA46EAE5A.png" alt="f8c65d78419a8e88e4c8cf2ed27dfdcc"><br>我们需要建立三个相同表结构的表：SOURCE数据库：SOURCE_EMP，TARGET数据库：TARGET_EMP、TMP_TARGET_EMP<br>因为没给TMP_TARGET_EMP表建立主键，我们所以需要在ODI设置关键字，不然会报错：如果未在目标数据存储中声明关键字, 则不能进行流控制<br><img src="100-ODI.resources/69714496-CA83-42DA-8EE6-290AFCB20BBB.png" alt="de2227306fe37464def783b262686a2d"><br><img src="100-ODI.resources/C972A8F7-7155-4DEE-9F2B-56443B61C849.png" alt="b871bed3bbeed95d34198626a0a86b0c"></p>
+<h1 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h1><p><img src="100-ODI.resources/94AB7D51-72A3-496E-A769-78DB30829718.png" alt="ebe948c53379f6ba2ea5717e82ecd25b"></p>
+<h2 id="导入知识模块"><a href="#导入知识模块" class="headerlink" title="导入知识模块"></a>导入知识模块</h2><p>定义：知识模块（KM）是代码模板，定义什么类型的SQL查询（插入，选择，等等）或是哪些脚本需要生成来完成数据提取，加载和转换操作。<br>类型说明：</p>
+<ul>
+<li>RKM：RKM完成从源系统和目标系统的数据结构的反向工程来形成数据模型的功能。</li>
+<li>CKM：CKM完成数据质量检查。</li>
+<li>LKM：LKM完成从源数据库数据加载到临时表。</li>
+<li>IKM：IKM完成从临时表的数据加载到目标表。</li>
+<li>SKM：SKM完成ODI和WEB服务接口的功能。</li>
+<li>SKM(Service KM)：Web服务知识模块，可以使用该知识模块来生成Web服务调用</li>
+</ul>
+<p><img src="100-ODI.resources/BFEC4B32-5271-456E-B32D-1EDC0426C204.png" alt="53a459b4ad2687e83d09e70828f9a8b1"></p>
+<h2 id="创建过程"><a href="#创建过程" class="headerlink" title="创建过程"></a>创建过程</h2><p>因为在同一过程中处理SOURCE和TARGET不同数据源，所以这里勾选多连接，并选择数据库对应技术<br><img src="100-ODI.resources/2EF3D65C-E9CA-45F4-BAC3-E9B027D47BE7.png" alt="2454913af7c2e47ca79d7f6e8485a336"><br>建立过程中的处理，下面建的三个处理都是使用上一步三个表的建表脚本<br><img src="100-ODI.resources/BE709A76-3BEE-4960-A81F-4DA64C22D087.png" alt="4f9286eb74cc9c8f640ba63279d29d45"><br><img src="100-ODI.resources/1E18A723-666F-49CF-9155-21A57EB77368.png" alt="dc41a7d5bf336390c82d0004a13a1df6"><br>可以先执行一遍，可以点击操作查看执行日志<br><img src="100-ODI.resources/04402129-4A16-4EE4-8DCF-E3C054E98D4E.png" alt="f4de59368b1524b3ea1c876afa0c86f3"><br>建立一个用于将TARGET的TMP表增量同步到正式表的过程<br><img src="100-ODI.resources/A7162840-B1D3-4F77-9129-E31F141B2247.png" alt="b83b44533de603b1bc5415e29001d59c"><br><img src="100-ODI.resources/6F7AB980-9A3B-49EE-A9CE-0FC94E6FA80E.png" alt="f4df808c7939affc174afa32e51f2b2a"></p>
+<h2 id="创建接口"><a href="#创建接口" class="headerlink" title="创建接口"></a>创建接口</h2><p>用于将SOURCE数据拉取到TARGET的TMP表<br><img src="100-ODI.resources/4B8B0A31-2C24-4FBB-921E-C0E5CA419E5C.png" alt="8823cc9335da757d0879b444a774a63d"><br><img src="100-ODI.resources/C86DD817-7490-4DD5-80C7-CA4608C43F80.png" alt="6f04e1c587eeaf72896790c33446e0e7"><br>我们建立的关键字在这里可以看到自动关联进来<br><img src="100-ODI.resources/9F4D4775-940B-4818-B0CC-4C1CEAF9087B.png" alt="1c84930e4d25d516cb2a80bebbaac502"></p>
+<h2 id="新建程序包"><a href="#新建程序包" class="headerlink" title="新建程序包"></a>新建程序包</h2><p><img src="100-ODI.resources/5DE628BD-1993-42D7-8E98-73AD14A91618.png" alt="2e828abfe97cac0b69ac89eeb82dd646"><br>将过程和接口拖入图表区域连接起<br><img src="100-ODI.resources/41BB8E21-DAC8-4DC9-920C-1FF4B44B1F04.png" alt="e26aae3109ca937656fd155b66fb66eb"><br>点击OdiSleep设置休眠时间<br><img src="100-ODI.resources/AD7BBA41-E540-4FE5-97D3-1F936ED4BD9A.png" alt="a60234c3a864c635bd23bc18890575a8"><br>这样就完成了不同数据库数据的定时增量同步功能了~</p>
+<h2 id="调度"><a href="#调度" class="headerlink" title="调度"></a>调度</h2><p>生成场景后，新建调度任务<br><img src="100-ODI.resources/7B60CF51-2BF8-4A3A-8624-F8A1D0A9B0A5.png" alt="f8ef33decb9e7eaeeb7b76254e92986f"><br>设置重复间隔<br><img src="100-ODI.resources/E0AF219D-E0FC-4AEE-9219-B1A2033967A1.png" alt="dc697cc6bb46c321df712cfd3c4aec5d"><br>查看设置的调度<br><img src="100-ODI.resources/D381D842-12F0-4E07-83F9-D79E642F3F8F.png" alt="16eab06df6b47c814969893d133854fd"><br>设置调度后，并进入拓扑，打开对应的代理点击更新调度才能生效，点击查看调度可以查看到正在调度情况<br><img src="100-ODI.resources/86033E78-A07B-4673-A7F2-01C85015887E.png" alt="9edc4684d437109727cbc20e77e5c4c4"></p>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><p>1、错误：ORA-00904: “LASTUPDATE”: 标识符无效<br>场景：接口同步报错，表中已经有LASTUPDATE字段，但是同步还是说标识符无效<br>原因：下图可以看到用ODI同步的时候，不同的知识模块，会自己建立相应的临时表存放从源数据库拉取的数据，再同步到我们的表里。<br>LASTUPDATE是后面加的，导致了ODI的临时表没有这个字段，从ODI的临时表导入我们表时，发现我们表多了LASTUPDATE字段，所以报错<br>解决：删除ODI建立的临时表重新进行同步<br><img src="100-ODI.resources/473023DA-885D-47B3-A311-3C07F795AAF0.png" alt="a2f140dc5ccaa356f1fd4a599dbbb785"><br><img src="100-ODI.resources/170EB394-4FEC-4DCC-B4EC-626BB735B6E6.png" alt="83f9066de909fbcadf7ba113549e91ca"><br>2、错误：ORA-01729: 需要数据库链接名<br>场景：模型能映射表结构到ODI，但是接口同步报错<br>解决：能映射表结构到ODI，说明数据服务器的JDBC连接到数据库端没问题，因为是不同数据库的同步，所以需要在红框中填入建好DBLINK，如果是本地同库不同schema可以直接用localhost<br><img src="100-ODI.resources/99E53A1C-B656-45F1-9C1A-377080F8BA05.png" alt="7d7871f81a45cebc4d6bd45712f19bf8"><br>3、参数传入一直为空<br>场景：默认参数一直无法传入<br>解决：先将执行日志界别跳高到6，查看日志中参数传入的值是什么，如果已经有默认值单传入还是空的，可以查看参数-&gt;历史记录，把删掉里面的记录<br><img src="100-ODI.resources/3A6AFD77-9F81-4E04-AC5E-BE9C51ED2BCA.png" alt="ae90b55f0c1ba7c297ed8bcaf8cdeb97"><br><img src="100-ODI.resources/57136236-4F29-44A8-B896-259DA98A911D.png" alt="db3405b2a8db2d88f616d8068273882d"><br><img src="100-ODI.resources/3AFB7410-9F43-4058-A1E3-705A7CFA7448.png" alt="e6e0d8b3c5fe92f96b7625a61a7e53e4"></p>
+<h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--【主资料档案库】</span></span><br><span class="line"><span class="comment">--创建档案库表空间</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLESPACE</span> C<span class="comment">##ODI_MASTER_TS</span></span><br><span class="line"><span class="keyword">LOGGING</span> </span><br><span class="line"><span class="keyword">DATAFILE</span> <span class="string">'D:\Sortware\app\oracle\tablespace\apps\c##odi_master_ts.dbf'</span></span><br><span class="line"><span class="keyword">SIZE</span> <span class="number">32</span>M  </span><br><span class="line"><span class="keyword">AUTOEXTEND</span> <span class="keyword">ON</span>  </span><br><span class="line"><span class="keyword">NEXT</span> <span class="number">32</span>M <span class="keyword">MAXSIZE</span> <span class="number">10</span>G </span><br><span class="line"><span class="keyword">EXTENT</span> <span class="keyword">MANAGEMENT</span> <span class="keyword">LOCAL</span>;</span><br><span class="line"><span class="comment">--创建用户</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> C<span class="comment">##ODI_MASTER IDENTIFIED BY "odi"</span></span><br><span class="line"><span class="keyword">DEFAULT</span> <span class="keyword">TABLESPACE</span> C<span class="comment">##ODI_MASTER_TS;</span></span><br><span class="line"><span class="comment">--授权</span></span><br><span class="line"><span class="keyword">GRANT</span> DBA <span class="keyword">TO</span> C<span class="comment">##ODI_MASTER;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--【开发工作资料档案库】</span></span><br><span class="line"><span class="comment">--创建用户</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> C<span class="comment">##ODI_WORK IDENTIFIED BY "odi"</span></span><br><span class="line"><span class="keyword">DEFAULT</span> <span class="keyword">TABLESPACE</span> C<span class="comment">##ODI_MASTER_TS;</span></span><br><span class="line"><span class="comment">--授权</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">CONNECT</span> <span class="keyword">TO</span> C<span class="comment">##ODI_WORK;</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">RESOURCE</span>  <span class="keyword">TO</span> C<span class="comment">##ODI_WORK;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--TARGET到SOURCE的DBLINK</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="keyword">LINK</span> SOURCE_DBL <span class="keyword">CONNECT</span> <span class="keyword">TO</span> <span class="keyword">SYSTEM</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="number">1234567</span> <span class="keyword">USING</span> <span class="string">'SOURCE'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--【SOURCE数据库】</span></span><br><span class="line"><span class="comment">--CREATE TABLE SOURCE_EMP</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> SOURCE_EMP(empno    <span class="built_in">NUMBER</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">                       ,ename    VARCHAR2(<span class="number">20</span>)</span><br><span class="line">                       ,job      VARCHAR2(<span class="number">50</span>)</span><br><span class="line">                       ,mgr      <span class="built_in">NUMBER</span></span><br><span class="line">                       ,hiredate <span class="built_in">DATE</span></span><br><span class="line">                       ,sal      <span class="built_in">NUMBER</span></span><br><span class="line">                       ,comm     <span class="built_in">NUMBER</span></span><br><span class="line">                       ,deptno   <span class="built_in">NUMBER</span></span><br><span class="line">                       ,lastupdate <span class="built_in">DATE</span> <span class="keyword">DEFAULT</span> <span class="keyword">SYSDATE</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>);</span><br><span class="line">                       </span><br><span class="line"><span class="comment">--INSERT INIT DATA</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Source_emp</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">  (<span class="number">7369</span>, <span class="string">'SMITH'</span>, <span class="string">'CLERK'</span>, <span class="number">7902</span>, <span class="keyword">To_Date</span>(<span class="string">'1980-12-17'</span>, <span class="string">'YYYY-MM-DD'</span>), <span class="number">800.00</span>, <span class="literal">NULL</span>, <span class="number">20</span>,<span class="keyword">SYSDATE</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Source_emp</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">  (<span class="number">7499</span>, <span class="string">'ALLEN'</span>, <span class="string">'SALESMAN'</span>, <span class="number">7698</span>, <span class="keyword">To_Date</span>(<span class="string">'1981-02-20'</span>, <span class="string">'YYYY-MM-DD'</span>), <span class="number">1600.00</span>, <span class="number">300.00</span>, <span class="number">30</span>,<span class="keyword">SYSDATE</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Source_emp</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">  (<span class="number">7521</span>, <span class="string">'WARD'</span>, <span class="string">'SALESMAN'</span>, <span class="number">7698</span>, <span class="keyword">To_Date</span>(<span class="string">'1981-02-22'</span>, <span class="string">'YYYY-MM-DD'</span>), <span class="number">1250.00</span>, <span class="number">500.00</span>, <span class="number">30</span>,<span class="keyword">SYSDATE</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Source_emp</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">  (<span class="number">7566</span>, <span class="string">'JONES'</span>, <span class="string">'MANAGER'</span>, <span class="number">7839</span>, <span class="keyword">To_Date</span>(<span class="string">'1981-04-02'</span>, <span class="string">'YYYY-MM-DD'</span>), <span class="number">2975.00</span>, <span class="literal">NULL</span>, <span class="number">20</span>,<span class="keyword">SYSDATE</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Source_emp</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">  (<span class="number">7654</span>, <span class="string">'MARTIN'</span>, <span class="string">'SALESMAN'</span>, <span class="number">7698</span>, <span class="keyword">To_Date</span>(<span class="string">'1981-09-28'</span>, <span class="string">'YYYY-MM-DD'</span>), <span class="number">1250.00</span>, <span class="number">1400.00</span>, <span class="number">30</span>,<span class="keyword">SYSDATE</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Source_emp</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">  (<span class="number">7698</span>, <span class="string">'BLAKE'</span>, <span class="string">'MANAGER'</span>, <span class="number">7839</span>, <span class="keyword">To_Date</span>(<span class="string">'1981-05-01'</span>, <span class="string">'YYYY-MM-DD'</span>), <span class="number">2850.00</span>, <span class="literal">NULL</span>, <span class="number">30</span>,<span class="keyword">SYSDATE</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Source_emp</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">  (<span class="number">7782</span>, <span class="string">'CLARK'</span>, <span class="string">'MANAGER'</span>, <span class="number">7839</span>, <span class="keyword">To_Date</span>(<span class="string">'1981-06-09'</span>, <span class="string">'YYYY-MM-DD'</span>), <span class="number">2450.00</span>, <span class="literal">NULL</span>, <span class="number">10</span>,<span class="keyword">SYSDATE</span>);  </span><br><span class="line">                       </span><br><span class="line"><span class="comment">--【TARGET数据库】</span></span><br><span class="line"><span class="comment">--CREATE TABLE TMP_TARGET_EMP</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> TMP_TARGET_EMP(empno    <span class="built_in">NUMBER</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">                           ,ename    VARCHAR2(<span class="number">20</span>)</span><br><span class="line">                           ,job      VARCHAR2(<span class="number">50</span>)</span><br><span class="line">                           ,mgr      <span class="built_in">NUMBER</span></span><br><span class="line">                           ,hiredate <span class="built_in">DATE</span></span><br><span class="line">                           ,sal      <span class="built_in">NUMBER</span></span><br><span class="line">                           ,comm     <span class="built_in">NUMBER</span></span><br><span class="line">                           ,deptno   <span class="built_in">NUMBER</span></span><br><span class="line">                           ,lastupdate <span class="built_in">DATE</span> <span class="keyword">DEFAULT</span> <span class="keyword">SYSDATE</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>);</span><br><span class="line"><span class="comment">--CREATE TABLE TARGET_EMP</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> TARGET_EMP(empno    <span class="built_in">NUMBER</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">                       ,ename    VARCHAR2(<span class="number">20</span>)</span><br><span class="line">                       ,job      VARCHAR2(<span class="number">50</span>)</span><br><span class="line">                       ,mgr      <span class="built_in">NUMBER</span></span><br><span class="line">                       ,hiredate <span class="built_in">DATE</span></span><br><span class="line">                       ,sal      <span class="built_in">NUMBER</span></span><br><span class="line">                       ,comm     <span class="built_in">NUMBER</span></span><br><span class="line">                       ,deptno   <span class="built_in">NUMBER</span></span><br><span class="line">                       ,lastupdate <span class="built_in">DATE</span> <span class="keyword">DEFAULT</span> <span class="keyword">SYSDATE</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">--【TEMP_TO_TARGET】</span></span><br><span class="line"><span class="comment">--将从SOURCE同步到TARGET的TMP_TARGET_EMP表的数据，增量同步到TARGET_EMP表</span></span><br><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line">  l_Lastupdate <span class="built_in">DATE</span>;</span><br><span class="line">  l_Dummy_Nm   NUMBER;</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  <span class="keyword">SELECT</span> <span class="keyword">MAX</span>(t.Lastupdate) <span class="keyword">INTO</span> l_Lastupdate <span class="keyword">FROM</span> Target_Emp t;</span><br><span class="line">  </span><br><span class="line">  FOR Rec IN (<span class="keyword">SELECT</span> *</span><br><span class="line">                <span class="keyword">FROM</span> Tmp_Target_Emp s</span><br><span class="line">               <span class="keyword">WHERE</span> s.Lastupdate &gt; Nvl(l_Lastupdate, s.Lastupdate - <span class="number">1</span>)) <span class="keyword">LOOP</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(<span class="number">1</span>) <span class="keyword">INTO</span> l_Dummy_Nm <span class="keyword">FROM</span> Target_Emp t <span class="keyword">WHERE</span> t.Empno = Rec.Empno;</span><br><span class="line">    </span><br><span class="line">    IF l_Dummy_Nm = 0 THEN</span><br><span class="line">      <span class="keyword">INSERT</span> <span class="keyword">INTO</span> Target_Emp t <span class="keyword">VALUES</span> Rec;</span><br><span class="line">    ELSE</span><br><span class="line">      <span class="keyword">UPDATE</span> Target_Emp t <span class="keyword">SET</span> <span class="keyword">ROW</span> = Rec <span class="keyword">WHERE</span> t.Empno = Rec.Empno;</span><br><span class="line">    <span class="keyword">END</span> <span class="keyword">IF</span>;</span><br><span class="line">  <span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line">EXCEPTION</span><br><span class="line">  WHEN OTHERS THEN</span><br><span class="line">    <span class="keyword">ROLLBACK</span>;</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Tools/007-Maven/" rel="next" title="007-Maven">
+                <i class="fa fa-chevron-left"></i> 007-Maven
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Tools/003-Lombok/" rel="prev" title="003-Lombok">
+                003-Lombok <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDYzNC8yMTE2Mw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpeg" alt="Tation">
+            
+              <p class="site-author-name" itemprop="name">Tation</p>
+              <div class="site-description motion-element" itemprop="description">个人博客</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#登陆配置"><span class="nav-number">3.</span> <span class="nav-text">登陆配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建主资料档案库"><span class="nav-number">3.1.</span> <span class="nav-text">创建主资料档案库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建主资料档案库-登录用户"><span class="nav-number">3.2.</span> <span class="nav-text">创建主资料档案库-登录用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建开发工作资料档案库"><span class="nav-number">3.3.</span> <span class="nav-text">创建开发工作资料档案库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库对接配置"><span class="nav-number">4.</span> <span class="nav-text">数据库对接配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据库"><span class="nav-number">4.1.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据服务器"><span class="nav-number">4.2.</span> <span class="nav-text">创建数据服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建逻辑方案"><span class="nav-number">4.3.</span> <span class="nav-text">创建逻辑方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建模型"><span class="nav-number">4.4.</span> <span class="nav-text">创建模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新建项目"><span class="nav-number">5.</span> <span class="nav-text">新建项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#导入知识模块"><span class="nav-number">5.1.</span> <span class="nav-text">导入知识模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建过程"><span class="nav-number">5.2.</span> <span class="nav-text">创建过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建接口"><span class="nav-number">5.3.</span> <span class="nav-text">创建接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建程序包"><span class="nav-number">5.4.</span> <span class="nav-text">新建程序包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调度"><span class="nav-number">5.5.</span> <span class="nav-text">调度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FAQ"><span class="nav-number">6.</span> <span class="nav-text">FAQ</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#脚本"><span class="nav-number">7.</span> <span class="nav-text">脚本</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tation</span>
+
+  
+
+  
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'Oracle/100-ODI/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

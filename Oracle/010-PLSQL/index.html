@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next gemini" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/header.jpeg?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/header.jpeg?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/header.jpeg?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="匿名块1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253DECLARE  l_Dummy_Nm  NUMBER;  l_Dummy_Str VARCHAR2(360);  l_Exp_Err EXCEPTION;  l_Rt_Status  VARCHAR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="010-PLSQL">
+<meta property="og:url" content="https://tationgh.github.io/Oracle/010-PLSQL/index.html">
+<meta property="og:site_name" content="Tation">
+<meta property="og:description" content="匿名块1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253DECLARE  l_Dummy_Nm  NUMBER;  l_Dummy_Str VARCHAR2(360);  l_Exp_Err EXCEPTION;  l_Rt_Status  VARCHAR">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-09T07:07:55.129Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="010-PLSQL">
+<meta name="twitter:description" content="匿名块1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253DECLARE  l_Dummy_Nm  NUMBER;  l_Dummy_Str VARCHAR2(360);  l_Exp_Err EXCEPTION;  l_Rt_Status  VARCHAR">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://tationgh.github.io/Oracle/010-PLSQL/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>010-PLSQL | Tation</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tation</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">个人博客，部分文章非基础教程而更像工具手册，随时欢迎与我交流：2012592020@qq.com</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时间线</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tationgh.github.io/Oracle/010-PLSQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tation">
+      <meta itemprop="description" content="个人博客">
+      <meta itemprop="image" content="/images/header.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tation">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">010-PLSQL
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-08 22:13:47" itemprop="dateCreated datePublished" datetime="2019-06-08T22:13:47+08:00">2019-06-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-09 15:07:55" itemprop="dateModified" datetime="2019-06-09T15:07:55+08:00">2019-06-09</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="匿名块"><a href="#匿名块" class="headerlink" title="匿名块"></a>匿名块</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line">  l_Dummy_Nm  <span class="built_in">NUMBER</span>;</span><br><span class="line">  l_Dummy_Str VARCHAR2(360);</span><br><span class="line">  l_Exp_Err EXCEPTION;</span><br><span class="line">  l_Rt_Status  VARCHAR2(100);</span><br><span class="line">  l_Rt_Message VARCHAR2(4000);</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  <span class="comment">--1# 判断</span></span><br><span class="line">  <span class="keyword">IF</span> <span class="number">1</span> = <span class="number">1</span> <span class="keyword">THEN</span></span><br><span class="line">    <span class="literal">NULL</span>;</span><br><span class="line">  ELSIF 1 &lt; 2 THEN</span><br><span class="line">    RETURN; <span class="comment">--结束程序</span></span><br><span class="line">  ELSE</span><br><span class="line">    l_Rt_Status  := 'E';</span><br><span class="line">    l_Rt_Message := '错误';</span><br><span class="line">    RAISE l_Exp_Err; <span class="comment">--抛出自定义异常</span></span><br><span class="line">  <span class="keyword">END</span> <span class="keyword">IF</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">--2# FOR循环</span></span><br><span class="line">  FOR Rec IN 1 .. 3 LOOP</span><br><span class="line">    CONTINUE;</span><br><span class="line">    EXIT;</span><br><span class="line">  <span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">--3# WHILE循环</span></span><br><span class="line">  WHILE 1 &lt; 2 LOOP</span><br><span class="line">    EXIT WHEN 1 = 1;</span><br><span class="line">  <span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">--4# GOTO跳转</span></span><br><span class="line">  &lt;&lt;go_Flag&gt;&gt;</span><br><span class="line">  GOTO Go_Flag;</span><br><span class="line"></span><br><span class="line">  <span class="comment">--#6 保存点</span></span><br><span class="line">  <span class="keyword">SAVEPOINT</span> a;</span><br><span class="line">  <span class="keyword">ROLLBACK</span> <span class="keyword">TO</span> a; <span class="comment">--回滚保存点A之后产生的所有DML操作，原有参数和变量值不会产生影响</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">--7# 提交</span></span><br><span class="line">  <span class="keyword">COMMIT</span>;</span><br><span class="line">EXCEPTION</span><br><span class="line">  WHEN l_Exp_Err THEN</span><br><span class="line">    <span class="keyword">ROLLBACK</span>;</span><br><span class="line">    Raise_Application_Error(-20002, '自定义异常:');</span><br><span class="line">    Dbms_Output.Put_Line('自定义异常:' || l_Rt_Status || l_Rt_Message);</span><br><span class="line">  WHEN OTHERS THEN</span><br><span class="line">    <span class="keyword">ROLLBACK</span>;</span><br><span class="line">    Dbms_Output.Put_Line(Substrb(<span class="keyword">REPLACE</span>(Dbms_Utility.Format_Error_Backtrace ||</span><br><span class="line">                                         Dbms_Utility.Format_Error_Stack</span><br><span class="line">                                        ,<span class="keyword">Chr</span>(<span class="number">10</span>)</span><br><span class="line">                                        ,<span class="string">';'</span>)</span><br><span class="line">                                ,<span class="number">1</span></span><br><span class="line">                                ,<span class="number">4000</span>));</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+
+<h1 id="包"><a href="#包" class="headerlink" title="包"></a>包</h1><p>NOCOPY应用于函数或存储过程在传递数据量很大的参数时，可起到优化性能的作用。当参数是OUT或者IN OUT类型时：没有NOCOPY＝按值传递；加上NOCOPY＝按引用传递。<br>默认情况下，OUT模式的参数是以按值传递进行调用的，NOCOPY模式用于限定OUT模式在调用时按引用传递（它只是一个编译器暗示,不一定总是起作用）。传引用的方式会在赋值的时候立即生效 ，如果发生异常，也会返回你函数或存储过程中赋进入的值；如果是传值的方式，如果发生异常，等于函数或存储过程中赋进入的值都无效，返回的值还是原来参数传进去的值。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">PACKAGE</span> Test_Pkg <span class="keyword">IS</span></span><br><span class="line">  <span class="comment">--==================================================</span></span><br><span class="line">  <span class="comment">-- Test_Fun</span></span><br><span class="line">  <span class="comment">-- DESC:方法声明</span></span><br><span class="line">  <span class="comment">--==================================================</span></span><br><span class="line">  <span class="keyword">FUNCTION</span> Test_Fun <span class="keyword">RETURN</span> <span class="built_in">NUMBER</span>;</span><br><span class="line">  <span class="comment">--==================================================</span></span><br><span class="line">  <span class="comment">-- Test_Proc</span></span><br><span class="line">  <span class="comment">-- DESC:存储过程声明</span></span><br><span class="line">  <span class="comment">--==================================================</span></span><br><span class="line">  PROCEDURE Test_Proc(x_Rt_Status  OUT NOCOPY VARCHAR2</span><br><span class="line">                     ,x_Rt_Message OUT NOCOPY VARCHAR2);</span><br><span class="line"><span class="keyword">END</span> Test_Pkg;</span><br><span class="line">/</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">PACKAGE</span> <span class="keyword">BODY</span> Test_Pkg <span class="keyword">IS</span></span><br><span class="line">  g_Pkg_Name <span class="keyword">CONSTANT</span> VARCHAR2(<span class="number">100</span>) := <span class="string">'TEST_PKG'</span>;</span><br><span class="line">  <span class="comment">--==================================================</span></span><br><span class="line">  <span class="comment">-- Test_Fun</span></span><br><span class="line">  <span class="comment">-- DESC:方法</span></span><br><span class="line">  <span class="comment">--==================================================</span></span><br><span class="line">  FUNCTION Test_Fun RETURN NUMBER IS</span><br><span class="line">    l_Rt_Data NUMBER;</span><br><span class="line">  <span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">RETURN</span> l_Rt_Data;</span><br><span class="line">  <span class="keyword">END</span> Test_Fun;</span><br><span class="line">  <span class="comment">--==================================================</span></span><br><span class="line">  <span class="comment">-- Test_Proc</span></span><br><span class="line">  <span class="comment">-- DESC:存储过程</span></span><br><span class="line">  <span class="comment">--==================================================</span></span><br><span class="line">  PROCEDURE Test_Proc(x_Rt_Status  OUT NOCOPY VARCHAR2</span><br><span class="line">                     ,x_Rt_Message OUT NOCOPY VARCHAR2) IS</span><br><span class="line">    <span class="keyword">PRAGMA</span> AUTONOMOUS_TRANSACTION; <span class="comment">/*自治事务*/</span></span><br><span class="line">    l_Rt_Status  VARCHAR2(10);</span><br><span class="line">    l_Rt_Message VARCHAR2(4000);</span><br><span class="line">  <span class="keyword">BEGIN</span></span><br><span class="line">    l_Rt_Status  := Apps.Fnd_Api.g_Ret_Sts_Success;</span><br><span class="line">    l_Rt_Message := NULL;</span><br><span class="line">    <span class="keyword">COMMIT</span>;</span><br><span class="line">  EXCEPTION</span><br><span class="line">    WHEN OTHERS THEN</span><br><span class="line">      <span class="keyword">ROLLBACK</span>;</span><br><span class="line">      x_Rt_Status  := l_Rt_Status;</span><br><span class="line">      x_Rt_Message := x_Rt_Message || l_Rt_Message;</span><br><span class="line">  <span class="keyword">END</span> Test_Proc;</span><br><span class="line"><span class="keyword">END</span> Test_Pkg;</span><br></pre></td></tr></table></figure>
+
+<h1 id="记录类型"><a href="#记录类型" class="headerlink" title="记录类型"></a>记录类型</h1><p>TIPS：索引从1开始</p>
+<ul>
+<li>记录表提供的方法几种：</li>
+<li>COUNT：返回记录表中的数量</li>
+<li>FIRST：返回记录表中最小索引值</li>
+<li>LAST：返回记录表中最大的索引值</li>
+<li>NEXT：返回记录表变量中的下一个索引</li>
+<li>DELETE：删除记录表中的记录</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line">  l_Empno  Emp.Empno%<span class="keyword">TYPE</span>; <span class="comment">--表字段类型</span></span><br><span class="line">  l_Emp_Tb Emp%ROWTYPE; <span class="comment">--单行记录表类型</span></span><br><span class="line">  TYPE Emp_Rec IS RECORD( <span class="comment">--记录类型</span></span><br><span class="line">     Empno    Emp.Empno%TYPE</span><br><span class="line">    ,Ename    Emp.Ename%TYPE</span><br><span class="line">    ,Job      Emp.Job%TYPE</span><br><span class="line">    ,Mgr      Emp.Mgr%TYPE</span><br><span class="line">    ,Hiredate Emp.Hiredate%TYPE</span><br><span class="line">    ,Sal      Emp.Sal%TYPE</span><br><span class="line">    ,Comm     Emp.Comm%TYPE</span><br><span class="line">    ,Deptno   Emp.Deptno%TYPE);</span><br><span class="line">  TYPE Emp_Rec_Tb IS TABLE OF Emp_Rec INDEX BY BINARY_INTEGER; <span class="comment">--多行记录表类型</span></span><br><span class="line">  l_Emp_Rec_Tb Emp_Rec_Tb; <span class="comment">--初始化</span></span><br><span class="line">  <span class="comment">/*INDEX BY BINARY_INTEGER：下标数据类型，使得下标自增长，使用时不再需要初始化，也不需要每次extend一个空间</span></span><br><span class="line"><span class="comment">  手动扩展空间eg:</span></span><br><span class="line"><span class="comment">  DECLARE</span></span><br><span class="line"><span class="comment">   TYPE Emp_Rec_Tb2 IS TABLE OF Emp_Rec;</span></span><br><span class="line"><span class="comment">   l_Emp_Rec_Tb2 Emp_Rec_Tb2 := Emp_Rec_Tb2();</span></span><br><span class="line"><span class="comment">  BEGIN</span></span><br><span class="line"><span class="comment">   l_Emp_Rec_Tb2.Extend;</span></span><br><span class="line"><span class="comment">   l_Emp_Rec_Tb2(1).Empno := 2;</span></span><br><span class="line"><span class="comment">   l_Emp_Rec_Tb2.Extend;</span></span><br><span class="line"><span class="comment">   l_Emp_Rec_Tb2(2).Empno := 3;</span></span><br><span class="line"><span class="comment">   FOR i IN 1 .. l_Emp_Rec_Tb2.Count LOOP</span></span><br><span class="line"><span class="comment">     Dbms_Output.Put_Line(l_Emp_Rec_Tb2(i).Empno);</span></span><br><span class="line"><span class="comment">   END LOOP;</span></span><br><span class="line"><span class="comment">  END;*/</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  <span class="comment">--#1.1</span></span><br><span class="line">  <span class="keyword">SELECT</span> t.* <span class="keyword">INTO</span> l_Emp_Tb <span class="keyword">FROM</span> Emp t <span class="keyword">WHERE</span> t.Empno = <span class="number">7839</span>;</span><br><span class="line">  <span class="comment">--#1.2</span></span><br><span class="line">  <span class="keyword">INSERT</span> <span class="keyword">INTO</span> Emp <span class="keyword">VALUES</span> l_Emp_Tb;</span><br><span class="line">  <span class="comment">--#1.3</span></span><br><span class="line">  <span class="keyword">UPDATE</span> Emp t <span class="keyword">SET</span> t.Ename = l_Emp_Tb.Ename <span class="keyword">WHERE</span> t.Empno = l_Emp_Tb.Empno;</span><br><span class="line">  <span class="comment">--#1.4</span></span><br><span class="line">  <span class="keyword">UPDATE</span> Emp t <span class="keyword">SET</span> t.Ename = l_Emp_Tb.Ename <span class="keyword">WHERE</span> <span class="keyword">Row</span> = l_Emp_Tb;</span><br><span class="line"></span><br><span class="line">  <span class="comment">--#2</span></span><br><span class="line">  <span class="keyword">SELECT</span> t.* <span class="keyword">BULK</span> <span class="keyword">COLLECT</span> <span class="keyword">INTO</span> l_Emp_Rec_Tb <span class="keyword">FROM</span> Emp t; <span class="comment">--BULK COLLECT可以将查询结果一次性地加载到collections</span></span><br><span class="line">  FOR i IN 1 .. l_Emp_Rec_Tb.Count LOOP</span><br><span class="line">    Dbms_Output.Put_Line('Empno=' || l_Emp_Rec_Tb(i).Empno || ',Ename=' || l_Emp_Rec_Tb(i)</span><br><span class="line">                         .Ename);</span><br><span class="line">  <span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line"></span><br><span class="line">  Dbms_Output.Put_Line('Count1:' || l_Emp_Rec_Tb.Count);</span><br><span class="line">  Dbms_Output.Put_Line('First:' || l_Emp_Rec_Tb.First);</span><br><span class="line">  Dbms_Output.Put_Line('Last:' || l_Emp_Rec_Tb.Last);</span><br><span class="line">  Dbms_Output.Put_Line('Next:' || l_Emp_Rec_Tb.Next(1));</span><br><span class="line">  l_Emp_Rec_Tb.Delete(l_Emp_Rec_Tb.Count); <span class="comment">--只能从最后一个开始删除，不然会报错</span></span><br><span class="line">  l_Emp_Rec_Tb.Delete; <span class="comment">--删除全部记录</span></span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+
+<h1 id="游标"><a href="#游标" class="headerlink" title="游标"></a>游标</h1><ul>
+<li>Emp_Cursor%FOUND 布尔型：当最近一次提取游标操作FETCH成功则为 TRUE,否则为FALSE</li>
+<li>Emp_Cursor%NOTFOUND 布尔型：与%FOUND相反</li>
+<li>Emp_Cursor%ISOPEN 布尔型：当游标已打开时返回 TRUE</li>
+<li>Emp_Cursor%ROWCOUNT 数字型：返回已从游标中读取的记录数</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line">  <span class="keyword">CURSOR</span> Emp_Cursor(p_Job VARCHAR2) <span class="keyword">IS</span></span><br><span class="line">    <span class="keyword">SELECT</span> t.Empno</span><br><span class="line">          ,t.Ename</span><br><span class="line">      <span class="keyword">FROM</span> Emp t</span><br><span class="line">     <span class="keyword">WHERE</span> t.Job = p_Job <span class="keyword">FOR</span> <span class="keyword">UPDATE</span> <span class="keyword">NOWAIT</span>;  <span class="comment">--对查询出来的数据添加行级锁，在打开游标时生效</span></span><br><span class="line">  l_Emp_Cursor Emp_Cursor%ROWTYPE;  <span class="comment">--同上相同类型的记录变量</span></span><br><span class="line">  l_Empno Emp.Empno%TYPE;</span><br><span class="line">  l_Ename Emp.Ename%TYPE;</span><br><span class="line">  TYPE Cursor_Type IS REF CURSOR;  <span class="comment">--游标变量</span></span><br><span class="line">  Temp_Cur Cursor_Type;</span><br><span class="line">  l_Sql    VARCHAR2(4000);</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  <span class="comment">--1.1 显式打开关闭游标</span></span><br><span class="line">  <span class="keyword">OPEN</span> Emp_Cursor(<span class="string">'SALESMAN'</span>); <span class="comment">--打开游标</span></span><br><span class="line">  FETCH Emp_Cursor <span class="comment">--提取游标</span></span><br><span class="line">    INTO l_Emp_Cursor;</span><br><span class="line">        </span><br><span class="line">  WHILE Emp_Cursor%FOUND LOOP <span class="comment">--是否成功提取游标</span></span><br><span class="line">    Dbms_Output.Put_Line('1.1<span class="comment">#' || l_Empno || ':' || l_Ename);</span></span><br><span class="line">    FETCH Emp_Cursor</span><br><span class="line">      INTO l_Empno</span><br><span class="line">          ,l_Ename;</span><br><span class="line">  <span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line">  CLOSE Emp_Cursor; <span class="comment">--关闭游标</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">--2.1 隐式打开关闭游标</span></span><br><span class="line">  FOR Emp_Rec IN Emp_Cursor('SALESMAN') LOOP</span><br><span class="line">    Dbms_Output.Put_Line('1.2<span class="comment">#' || Emp_Rec.Empno || ':' || Emp_Rec.Ename);</span></span><br><span class="line">  <span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">--2.2 隐式游标</span></span><br><span class="line">  FOR Emp_Rec IN (<span class="keyword">SELECT</span> t.Empno</span><br><span class="line">                        ,t.Ename</span><br><span class="line">                    <span class="keyword">FROM</span> Emp t</span><br><span class="line">                   <span class="keyword">WHERE</span> t.Job = <span class="string">'SALESMAN'</span>) <span class="keyword">LOOP</span></span><br><span class="line">    Dbms_Output.Put_Line(<span class="string">'2#'</span> || Emp_Rec.Empno || <span class="string">':'</span> || Emp_Rec.Ename);</span><br><span class="line">  <span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">--3 动态游标</span></span><br><span class="line">  l_Sql := '<span class="keyword">SELECT</span> t.Ename <span class="keyword">FROM</span> Emp t <span class="keyword">WHERE</span> t.Job = <span class="string">' || p_Job;</span></span><br><span class="line"><span class="string">  OPEN Temp_Cur FOR l_Sql;</span></span><br><span class="line"><span class="string">  LOOP</span></span><br><span class="line"><span class="string">    FETCH Temp_Cur</span></span><br><span class="line"><span class="string">      INTO l_Ename;</span></span><br><span class="line"><span class="string">    Dbms_Output.Put_Line(l_Ename);</span></span><br><span class="line"><span class="string">    EXIT WHEN Temp_Cur%NOTFOUND;</span></span><br><span class="line"><span class="string">  END LOOP;</span></span><br><span class="line"><span class="string">  CLOSE Temp_Cur;</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  --使用游标的属性判断DML是否执行了操作</span></span><br><span class="line"><span class="string">  UPDATE Emp SET sal=sal+100 WHERE empno=1234;</span></span><br><span class="line"><span class="string">  IF SQL%FOUND THEN    </span></span><br><span class="line"><span class="string">    DBMS_OUTPUT.PUT_LINE('</span>更新成功！<span class="string">');   </span></span><br><span class="line"><span class="string">  END IF；</span></span><br><span class="line"><span class="string">END;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h1><p>绑定变量</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line">  l_Sql VARCHAR2(<span class="number">240</span>);</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  l_Sql := <span class="string">'CREATE TABLE TABLENAME(ID NUMBER,NAME VARCHAR2(100))'</span>;</span><br><span class="line">  <span class="keyword">EXECUTE</span> <span class="keyword">IMMEDIATE</span> l_Sql;</span><br><span class="line">  l_Sql := '<span class="keyword">INSERT</span> <span class="keyword">INTO</span> TABLENAME <span class="keyword">VALUES</span> (:<span class="number">1</span>,:<span class="number">2</span>)<span class="string">';</span></span><br><span class="line"><span class="string">  EXECUTE IMMEDIATE l_Sql</span></span><br><span class="line"><span class="string">    USING 101, '</span><span class="keyword">name</span><span class="string">'; --使用using绑定输入变量 </span></span><br><span class="line"><span class="string">  COMMIT;</span></span><br><span class="line"><span class="string">END;</span></span><br></pre></td></tr></table></figure>
+
+<p>查询返回单行值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line">  l_Sql  VARCHAR2(<span class="number">240</span>);</span><br><span class="line">  l_Id   NUMBER;</span><br><span class="line">  l_Name VARCHAR2(100);</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  l_Sql := <span class="string">'SELECT ID,NAME FROM TABLENAME WHERE ID=:1'</span>;</span><br><span class="line">  <span class="keyword">EXECUTE</span> <span class="keyword">IMMEDIATE</span> l_Sql</span><br><span class="line">    <span class="keyword">INTO</span> l_Id, l_Name</span><br><span class="line">    <span class="keyword">USING</span> <span class="string">'101'</span>;</span><br><span class="line">  Dbms_Output.Put_Line('ID=' || l_Id || ',NAME=' || l_Name);</span><br><span class="line">EXCEPTION</span><br><span class="line">  WHEN OTHERS THEN</span><br><span class="line">    Dbms_Output.Put_Line('Not data found!');</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+
+<p>查询返回多行值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line">  l_Sql VARCHAR2(<span class="number">240</span>);</span><br><span class="line">  TYPE Tablename_Rec IS RECORD(</span><br><span class="line">     Id   Tablename.Id%TYPE</span><br><span class="line">    ,NAME Tablename.Name%TYPE);</span><br><span class="line">  TYPE Tablename_Rec_Tb IS TABLE OF Tablename_Rec INDEX BY BINARY_INTEGER;</span><br><span class="line">  l_Tablename_Rec_Tb Tablename_Rec_Tb;</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  l_Sql := <span class="string">'SELECT ID,NAME FROM TABLENAME'</span>;</span><br><span class="line">  <span class="keyword">EXECUTE</span> <span class="keyword">IMMEDIATE</span> l_Sql <span class="keyword">BULK</span> <span class="keyword">COLLECT</span></span><br><span class="line">    <span class="keyword">INTO</span> l_Tablename_Rec_Tb;</span><br><span class="line">  FOR i IN 1 .. l_Tablename_Rec_Tb.Count LOOP</span><br><span class="line">    Dbms_Output.Put_Line('ID=' || l_Tablename_Rec_Tb(i).Id || ',NAME=' ||l_Tablename_Rec_Tb(i).Name);</span><br><span class="line">  <span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line">EXCEPTION</span><br><span class="line">  WHEN OTHERS THEN</span><br><span class="line">    Dbms_Output.Put_Line('Not data found!' || SQLERRM);</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+
+<p>动态调用存储过程</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line">  l_Sql  VARCHAR2(<span class="number">240</span>);</span><br><span class="line">  l_Name VARCHAR2(20);</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  l_Sql := <span class="string">'BEGIN TABLENAME_PKG(:1,:2); END;'</span>;</span><br><span class="line">  <span class="keyword">EXECUTE</span> <span class="keyword">IMMEDIATE</span> l_Sql</span><br><span class="line">    <span class="keyword">USING</span> <span class="string">'101'</span>, <span class="keyword">OUT</span> l_Name; <span class="comment">--输出变量需显式说明 </span></span><br><span class="line">  Dbms_Output.Put_Line('NAME=' || l_Name);</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Tools/003-Lombok/" rel="next" title="003-Lombok">
+                <i class="fa fa-chevron-left"></i> 003-Lombok
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Oracle/005-安全/" rel="prev" title="005-安全">
+                005-安全 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDYzNC8yMTE2Mw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpeg" alt="Tation">
+            
+              <p class="site-author-name" itemprop="name">Tation</p>
+              <div class="site-description motion-element" itemprop="description">个人博客</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#匿名块"><span class="nav-number">1.</span> <span class="nav-text">匿名块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包"><span class="nav-number">2.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#记录类型"><span class="nav-number">3.</span> <span class="nav-text">记录类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#游标"><span class="nav-number">4.</span> <span class="nav-text">游标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态SQL"><span class="nav-number">5.</span> <span class="nav-text">动态SQL</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tation</span>
+
+  
+
+  
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'Oracle/010-PLSQL/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

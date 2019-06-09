@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next gemini" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/header.jpeg?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/header.jpeg?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/header.jpeg?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="弹性域说明性弹性域 路径：应用开发员=&amp;gt;弹性域=&amp;gt;说明性=&amp;gt;注册 应用：选择注册的应用 名称：自定义唯一，弹性域的名称 标题：弹性域窗口的标题 表应用：注册表指定的应用 表名：选择注册的表名称 结构列：用于存放上下文的值，必须是存在于注册过的列，一般用：ATTRIBUTE_CATEGORY 上下文提示：弹性域窗口上下文字段标题  &amp;gt;参考字段字段名：表字段、环境变量等作用：根">
+<meta property="og:type" content="article">
+<meta property="og:title" content="APP">
+<meta property="og:url" content="https://tationgh.github.io/EBS/APP/index.html">
+<meta property="og:site_name" content="Tation">
+<meta property="og:description" content="弹性域说明性弹性域 路径：应用开发员=&amp;gt;弹性域=&amp;gt;说明性=&amp;gt;注册 应用：选择注册的应用 名称：自定义唯一，弹性域的名称 标题：弹性域窗口的标题 表应用：注册表指定的应用 表名：选择注册的表名称 结构列：用于存放上下文的值，必须是存在于注册过的列，一般用：ATTRIBUTE_CATEGORY 上下文提示：弹性域窗口上下文字段标题  &amp;gt;参考字段字段名：表字段、环境变量等作用：根">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/2FE8720D-84FC-4785-A0A7-95B07A8C2EC3.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/271EB4FA-3E0D-48E5-BF8D-5AD9C3B6AB27.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/C1AF870E-5534-4F3E-9285-6DEBBCD1A6CA.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/C9103732-7C6F-40E3-9F13-96C31FBA22F2.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/2E46738E-4729-40F2-91AF-99DA81EDE1F8.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/770E4D2E-EFFC-4AAD-9BAB-E98841B4CD48.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/EA018224-F23E-44E8-991C-9036F45B37A7.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/1ED48ACD-7B7A-42AF-B12C-066C64A7B51B.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/CAC90192-DC5C-4625-A155-7159BEACE8B9.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/0B062DBC-72E5-4FDF-91FE-8ED76FD84B93.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/09310080-AD66-4E63-8CD5-4DD912B1D845.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/5644C3B8-A6DB-449F-9744-7E0D38B32ED7.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/DA040E2E-CDA7-4D7C-88D1-68147C41BB0F.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/EAB67BC8-2F6E-418F-B41F-7ABFA79B98DA.png">
+<meta property="og:image" content="https://tationgh.github.io/EBS/APP/APP.resources/C9A75BB2-E10D-45FC-9E71-C1CE80C9CEF1.png">
+<meta property="og:updated_time" content="2019-06-09T07:24:26.082Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="APP">
+<meta name="twitter:description" content="弹性域说明性弹性域 路径：应用开发员=&amp;gt;弹性域=&amp;gt;说明性=&amp;gt;注册 应用：选择注册的应用 名称：自定义唯一，弹性域的名称 标题：弹性域窗口的标题 表应用：注册表指定的应用 表名：选择注册的表名称 结构列：用于存放上下文的值，必须是存在于注册过的列，一般用：ATTRIBUTE_CATEGORY 上下文提示：弹性域窗口上下文字段标题  &amp;gt;参考字段字段名：表字段、环境变量等作用：根">
+<meta name="twitter:image" content="https://tationgh.github.io/EBS/APP/APP.resources/2FE8720D-84FC-4785-A0A7-95B07A8C2EC3.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://tationgh.github.io/EBS/APP/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>APP | Tation</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tation</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">个人博客，部分文章非基础教程而更像工具手册，随时欢迎与我交流：2012592020@qq.com</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时间线</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tationgh.github.io/EBS/APP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tation">
+      <meta itemprop="description" content="个人博客">
+      <meta itemprop="image" content="/images/header.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tation">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">APP
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-08 22:13:47" itemprop="dateCreated datePublished" datetime="2019-06-08T22:13:47+08:00">2019-06-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-09 15:24:26" itemprop="dateModified" datetime="2019-06-09T15:24:26+08:00">2019-06-09</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/EBS/" itemprop="url" rel="index"><span itemprop="name">EBS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="弹性域"><a href="#弹性域" class="headerlink" title="弹性域"></a>弹性域</h1><h2 id="说明性弹性域"><a href="#说明性弹性域" class="headerlink" title="说明性弹性域"></a>说明性弹性域</h2><ul>
+<li>路径：应用开发员=&gt;弹性域=&gt;说明性=&gt;注册</li>
+<li>应用：选择注册的应用</li>
+<li>名称：自定义唯一，弹性域的名称</li>
+<li>标题：弹性域窗口的标题</li>
+<li>表应用：注册表指定的应用</li>
+<li>表名：选择注册的表名称</li>
+<li>结构列：用于存放上下文的值，必须是存在于注册过的列，一般用：ATTRIBUTE_CATEGORY</li>
+<li>上下文提示：弹性域窗口上下文字段标题</li>
+</ul>
+<p><img src="APP.resources/2FE8720D-84FC-4785-A0A7-95B07A8C2EC3.png" alt="8c991c8c0fdbaa1fdedd3a6377c1a557"><br>&gt;参考字段<br>字段名：表字段、环境变量等作用：根据参考字段的值显示对应的弹性域段<br><img src="APP.resources/271EB4FA-3E0D-48E5-BF8D-5AD9C3B6AB27.png" alt="ccdb2eaac6f50990f36ee883e59b350f"><br>&gt;列<br>显示注册后的列字段（ATTRIBUTE），如果填写了结构列字段，则这里面将不在显示结构列字段，因为系统认为结构列字段与弹性字段是不同的，如果某字段不需要可以取消勾选启用，这样在构造弹性域时此字段不会显示<br><img src="APP.resources/C1AF870E-5534-4F3E-9285-6DEBBCD1A6CA.png" alt="c48526aa190865e8c0830201565cb75a"><br>&gt;段<br>值集：手动创建的上下文字段值中代码的值集，选择的值会保存在结构列中默认值： 此处LOV的数据来源于上下文段值的“代码”，打开弹性域窗口时默认带出的上下文默认值参考字段：此处LOV的数据来源于在弹性域里的“参考字段”，根据参考字段的值显示对应的弹性域段必需：上下文是否必需显示：上下文是否显示与参考字段同步：如果输入了参考字段，则需要勾选上下文可以定义多个弹性域段（上下文字段值–代码），每个弹性域段都有一个默认的段定义Global Data Elements，如果我们定义的弹性域只有一种段结构的话，可以直接在Global Data Elements段中进行定义，如果有多个的话，需要在另外创建，需要注意的是一旦弹性域字段在Global Data Elements中定义了，那么在其他创建的弹性域段中则选不到此字段<img src="APP.resources/C9103732-7C6F-40E3-9F13-96C31FBA22F2.png" alt="3369083d41a40c8371f90cf1404d6695"><br>&gt;段摘要<br>编号：序号<br>名称：唯一，标识列的名称<br>窗口提示：弹性域窗口字段标题<br>列：注册到数据库的列名<br><img src="APP.resources/2E46738E-4729-40F2-91AF-99DA81EDE1F8.png" alt="160bedeab2042c642bc87eea660100a1"><br>TIPS：上下文在界面处理逻辑：<br><img src="APP.resources/770E4D2E-EFFC-4AAD-9BAB-E98841B4CD48.png" alt="406e018c15cd60bd4a407aa9c6d7c2ac"></p>
+<h2 id="表关联"><a href="#表关联" class="headerlink" title="表关联"></a>表关联</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Fdfv.Application_Id                 应用<span class="keyword">id</span></span><br><span class="line">      ,Fav.Application_Name                应用产品</span><br><span class="line">      ,Fdfv.Descriptive_Flexfield_Name     弹性域名称</span><br><span class="line">      ,Fdfv.Title                          标题</span><br><span class="line">      ,Fdfv.Description                    说明</span><br><span class="line">      ,Fdfv.Table_Application_Id           表应用<span class="keyword">id</span></span><br><span class="line">      ,Fdfv.Application_Table_Name         表名</span><br><span class="line">      ,Fdfv.Context_Column_Name            结构列</span><br><span class="line">      ,Fdfv.Form_Context_Prompt            上下文提示</span><br><span class="line">      ,Fdfv.Concatenated_Segs_View_Name    Dfv视图名称</span><br><span class="line">      ,Fdfv.Protected_Flag                 保护</span><br><span class="line">      <span class="comment">--</span></span><br><span class="line">      ,Fdfcv.Descriptive_Flex_Context_Code 结构代码</span><br><span class="line">      ,Fdfcv.Description                   名称</span><br><span class="line">      ,Fdfcv.Descriptive_Flex_Context_Name 说明</span><br><span class="line">      ,Fdfcv.Enabled_Flag                  启用</span><br><span class="line">      <span class="comment">--</span></span><br><span class="line">      ,Fdfcuv.Column_Seq_Num               编号</span><br><span class="line">      ,Fdfcuv.End_User_Column_Name         名称</span><br><span class="line">      ,Fdfcuv.Form_Left_Prompt             窗口提示</span><br><span class="line">      ,Fdfcuv.Application_Column_Name      列名</span><br><span class="line">      ,Fdfcuv.Display_Flag                 显示</span><br><span class="line">      ,Fdfcuv.Enabled_Flag                 启用</span><br><span class="line">      ,Fdfcuv.Flex_Value_Set_Id            值集<span class="keyword">id</span></span><br><span class="line">  <span class="keyword">FROM</span> Apps.Fnd_Descriptive_Flexs_Vl Fdfv</span><br><span class="line">  <span class="keyword">JOIN</span> Apps.Fnd_Application_Vl Fav</span><br><span class="line">    <span class="keyword">ON</span> Fav.Application_Id = Fdfv.Application_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Fnd_Descr_Flex_Contexts_Vl Fdfcv <span class="comment">--段</span></span><br><span class="line">    <span class="keyword">ON</span> Fdfcv.Application_Id = Fdfv.Application_Id</span><br><span class="line">   <span class="keyword">AND</span> Fdfcv.Descriptive_Flexfield_Name = Fdfv.Descriptive_Flexfield_Name</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Fnd_Descr_Flex_Col_Usage_Vl Fdfcuv <span class="comment">--段摘要</span></span><br><span class="line">    <span class="keyword">ON</span> Fdfcuv.Application_Id = Fdfcv.Application_Id</span><br><span class="line">   <span class="keyword">AND</span> Fdfcuv.Descriptive_Flexfield_Name = Fdfcv.Descriptive_Flexfield_Name</span><br><span class="line">   <span class="keyword">AND</span> Fdfcuv.Descriptive_Flex_Context_Code = Fdfcv.Descriptive_Flex_Context_Code</span><br><span class="line"> <span class="keyword">WHERE</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line">   <span class="keyword">AND</span> Fdfv.Application_Id = <span class="number">401</span> <span class="comment">--&amp;</span></span><br><span class="line">   <span class="keyword">AND</span> Fdfv.Descriptive_Flexfield_Name = <span class="string">'MTL_SYSTEM_ITEMS'</span> <span class="comment">--&amp;</span></span><br><span class="line">   <span class="keyword">AND</span> Fdfcv.Descriptive_Flex_Context_Code = <span class="string">'Global Data Elements'</span> <span class="comment">--&amp;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="APP.resources/EA018224-F23E-44E8-991C-9036F45B37A7.png" alt="510c64cf5921761ce2cb642edb18f1b5"></p>
+<h1 id="键弹性域"><a href="#键弹性域" class="headerlink" title="键弹性域"></a>键弹性域</h1><p>与”说明性弹性域”属于表单的用户”补充 段”不同的是，”键弹性域”本身就属于系统表单”不可或缺”的标准段参与业务流程的构建</p>
+<ul>
+<li>应用：选择注册的应用</li>
+<li>代码：自定义唯一，最多四个字符，弹性域CODE</li>
+<li>标题：弹性域窗口的标题</li>
+<li>表应用：注册表指定的应用</li>
+<li>表名：选择注册的表名称</li>
+<li>结构列：必须是注册过的列，结构列的用处是存放键弹性域使用的是哪个段结构的代码</li>
+<li>唯一标识列：键弹性域唯一标识列，必须是注册过的列</li>
+</ul>
+<p><img src="APP.resources/1ED48ACD-7B7A-42AF-B12C-066C64A7B51B.png" alt="a3fbad9e51a853c3aa7474bbf46b5fcc"></p>
+<h2 id="表关联-1"><a href="#表关联-1" class="headerlink" title="表关联"></a>表关联</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Fif.Application_Id              应用<span class="keyword">id</span></span><br><span class="line">      ,Fav.Application_Name            应用产品</span><br><span class="line">      ,Fif.Id_Flex_Code                代码</span><br><span class="line">      ,Fif.Id_Flex_Name                标题</span><br><span class="line">      ,Fif.Description                 说明</span><br><span class="line">      ,Fif.Table_Application_Id        表应用<span class="keyword">id</span></span><br><span class="line">      ,Fif.Application_Table_Name      表名</span><br><span class="line">      ,Fif.Unique_Id_Column_Name       唯一标识列</span><br><span class="line">      ,Fif.Set_Defining_Column_Name    结构列</span><br><span class="line">      ,Fif.Concatenated_Segs_View_Name Kfv视图名称</span><br><span class="line">      ,Fifsv.Id_Flex_Num               序号</span><br><span class="line">      ,Fifsv.Id_Flex_Structure_Code    结构代码</span><br><span class="line">      ,Fifsv.Enabled_Flag              启用</span><br><span class="line">      ,Fifsv.Description               说明</span><br><span class="line">      ,Fifsvv.Segment_Num              编号</span><br><span class="line">      ,Fifsvv.Segment_Name             名称</span><br><span class="line">      ,Fifsvv.Description              说明</span><br><span class="line">      ,Fifsvv.Application_Column_Name  列名</span><br><span class="line">      ,Fifsvv.Display_Flag             显示</span><br><span class="line">      ,Fifsvv.Enabled_Flag             启用</span><br><span class="line">      ,Fifsvv.Flex_Value_Set_Id        值集<span class="keyword">id</span></span><br><span class="line">  <span class="keyword">FROM</span> Apps.Fnd_Id_Flexs Fif</span><br><span class="line">  <span class="keyword">JOIN</span> Apps.Fnd_Application_Vl Fav</span><br><span class="line">    <span class="keyword">ON</span> Fav.Application_Id = Fif.Application_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Fnd_Id_Flex_Structures_Vl Fifsv <span class="comment">--段</span></span><br><span class="line">    <span class="keyword">ON</span> Fifsv.Application_Id = Fif.Application_Id</span><br><span class="line">   <span class="keyword">AND</span> Fifsv.Id_Flex_Code = Fif.Id_Flex_Code</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Fnd_Id_Flex_Segments_Vl Fifsvv <span class="comment">--段摘要</span></span><br><span class="line">    <span class="keyword">ON</span> Fifsvv.Application_Id = Fifsv.Application_Id</span><br><span class="line">   <span class="keyword">AND</span> Fifsvv.Id_Flex_Code = Fifsv.Id_Flex_Code</span><br><span class="line">   <span class="keyword">AND</span> Fifsvv.Id_Flex_Num = Fifsv.Id_Flex_Num</span><br><span class="line"> <span class="keyword">WHERE</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line">   <span class="keyword">AND</span> Fif.Application_Id = <span class="number">401</span> <span class="comment">--&amp;</span></span><br><span class="line">   <span class="keyword">AND</span> Fif.Id_Flex_Code = <span class="string">'MSTK'</span> <span class="comment">--&amp;</span></span><br><span class="line">   <span class="keyword">AND</span> Fifsv.Id_Flex_Num = <span class="number">101</span> <span class="comment">--&amp;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="APP.resources/CAC90192-DC5C-4625-A155-7159BEACE8B9.png" alt="6991cd4868860504f2bf39f9509b4588"></p>
+<h1 id="值集"><a href="#值集" class="headerlink" title="值集"></a>值集</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Ffvs.Flex_Value_Set_Id        值集<span class="keyword">id</span></span><br><span class="line">      ,Ffvs.Flex_Value_Set_Name      值集名</span><br><span class="line">      ,Ffvs.Description              说明</span><br><span class="line">      ,Ffvs.Parent_Flex_Value_Set_Id 父级值集<span class="keyword">id</span></span><br><span class="line">      ,Ffvv.Parent_Flex_Value_Low    父级值集值</span><br><span class="line">      ,Ffvv.Flex_Value_Id            值<span class="keyword">id</span></span><br><span class="line">      ,Ffvv.Flex_Value               值</span><br><span class="line">      ,Ffvv.Flex_Value_Meaning       转换的值</span><br><span class="line">      ,Ffvv.Description              说明</span><br><span class="line">  <span class="keyword">FROM</span> Apps.Fnd_Flex_Value_Sets Ffvs</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Fnd_Flex_Values_Vl Ffvv</span><br><span class="line">    <span class="keyword">ON</span> Nvl(Ffvv.Enabled_Flag, <span class="string">'N'</span>) = <span class="string">'Y'</span></span><br><span class="line">   <span class="keyword">AND</span> <span class="keyword">SYSDATE</span> <span class="keyword">BETWEEN</span> Nvl(Ffvv.Start_Date_Active, <span class="keyword">SYSDATE</span>) <span class="keyword">AND</span></span><br><span class="line">       Nvl(Ffvv.End_Date_Active, <span class="keyword">SYSDATE</span>)</span><br><span class="line">   <span class="keyword">AND</span> Ffvv.Flex_Value_Set_Id = Ffvs.Flex_Value_Set_Id</span><br><span class="line"> <span class="keyword">WHERE</span> Ffvs.Flex_Value_Set_Name = <span class="string">'CVTE_COA_DEPARTMENT'</span> <span class="comment">--&amp;</span></span><br><span class="line">   <span class="keyword">AND</span> Ffvv.Parent_Flex_Value_Low = <span class="string">'10'</span> <span class="comment">--&amp;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="APP.resources/0B062DBC-72E5-4FDF-91FE-8ED76FD84B93.png" alt="bb2c1beac53b517c32b3d9e7531439df"><br><img src="APP.resources/09310080-AD66-4E63-8CD5-4DD912B1D845.png" alt="2c86c8cd1ff22e4c13fc349e4486f20e"></p>
+<h1 id="安全性规则"><a href="#安全性规则" class="headerlink" title="安全性规则"></a>安全性规则</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> (<span class="keyword">SELECT</span> Ffvs.Flex_Value_Set_Name</span><br><span class="line">          <span class="keyword">FROM</span> Apps.Fnd_Flex_Value_Sets Ffvs</span><br><span class="line">         <span class="keyword">WHERE</span> Ffvs.Flex_Value_Set_Id = Ffvrv.Flex_Value_Set_Id) 值集名称</span><br><span class="line">      ,Ffvrv.Flex_Value_Rule_Id   规则<span class="keyword">id</span></span><br><span class="line">      ,Ffvrv.Flex_Value_Rule_Name 名称</span><br><span class="line">      ,Ffvrv.Description          说明</span><br><span class="line">     ,Ffvrv.Error_Message        消息</span><br><span class="line">      ,<span class="keyword">Decode</span>(Ffvrl.Include_Exclude_Indicator, <span class="string">'I'</span>, <span class="string">'包括'</span>, <span class="string">'E'</span>, <span class="string">'排除'</span>) 类型</span><br><span class="line">      ,Ffvrl.Flex_Value_Low       类型自</span><br><span class="line">      ,Ffvrl.Flex_Value_High      类型至</span><br><span class="line">      ,(<span class="keyword">SELECT</span> Fav.Application_Name</span><br><span class="line">          <span class="keyword">FROM</span> Apps.Fnd_Application_Vl Fav</span><br><span class="line">         <span class="keyword">WHERE</span> Fav.Application_Id = Ffvru.Application_Id) 应用产品</span><br><span class="line">      ,(<span class="keyword">SELECT</span> Frv.Responsibility_Name</span><br><span class="line">          <span class="keyword">FROM</span> Apps.Fnd_Responsibility_Vl Frv</span><br><span class="line">         <span class="keyword">WHERE</span> Frv.Responsibility_Id = Ffvru.Responsibility_Id) 责任名</span><br><span class="line">  <span class="keyword">FROM</span> Apps.Fnd_Flex_Value_Rules_Vl Ffvrv</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Fnd_Flex_Value_Rule_Lines Ffvrl</span><br><span class="line">    <span class="keyword">ON</span> Ffvrv.Flex_Value_Set_Id = Ffvrl.Flex_Value_Set_Id</span><br><span class="line">   <span class="keyword">AND</span> Ffvrv.Flex_Value_Rule_Id = Ffvrl.Flex_Value_Rule_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Fnd_Flex_Value_Rule_Usages Ffvru</span><br><span class="line">    <span class="keyword">ON</span> Ffvru.Flex_Value_Set_Id = Ffvrl.Flex_Value_Set_Id</span><br><span class="line">   <span class="keyword">AND</span> Ffvru.Flex_Value_Rule_Id = Ffvrl.Flex_Value_Rule_Id</span><br><span class="line"> <span class="keyword">WHERE</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line">   <span class="keyword">AND</span> Ffvrv.Flex_Value_Set_Id = <span class="number">1014895</span> <span class="comment">--&amp;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="APP.resources/5644C3B8-A6DB-449F-9744-7E0D38B32ED7.png" alt="87ce156d760ef4ceec9cbe0e2cde9568"><br><img src="APP.resources/DA040E2E-CDA7-4D7C-88D1-68147C41BB0F.png" alt="a8d909646d03960d232bca05ab05fdc0"></p>
+<h1 id="快速编码"><a href="#快速编码" class="headerlink" title="快速编码"></a>快速编码</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Fltv.View_Application_Id 应用<span class="keyword">id</span></span><br><span class="line">      ,Fav.Application_Name     应用产品</span><br><span class="line">      ,Fltv.Lookup_Type         类型</span><br><span class="line">      ,Fltv.Customization_Level 访问级别</span><br><span class="line">      ,Fltv.Security_Group_Id   安全组</span><br><span class="line">      ,Fltv.Meaning             含义</span><br><span class="line">      ,Fltv.Description         说明</span><br><span class="line">      ,Flv.Lookup_Code          代码</span><br><span class="line">      ,Flv.Meaning              含义</span><br><span class="line">      ,Flv.Description          说明</span><br><span class="line">  <span class="keyword">FROM</span> Apps.Fnd_Lookup_Types_Vl Fltv</span><br><span class="line">  <span class="keyword">JOIN</span> Apps.Fnd_Application_Vl Fav</span><br><span class="line">    <span class="keyword">ON</span> Fav.Application_Id = Fltv.View_Application_Id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Apps.Fnd_Lookup_Values Flv</span><br><span class="line">    <span class="keyword">ON</span> Flv.Language = <span class="string">'ZHS'</span></span><br><span class="line">   <span class="keyword">AND</span> Nvl(Flv.Enabled_Flag, <span class="string">'N'</span>) = <span class="string">'Y'</span></span><br><span class="line">   <span class="keyword">AND</span> <span class="keyword">SYSDATE</span> <span class="keyword">BETWEEN</span> Nvl(Flv.Start_Date_Active, <span class="keyword">SYSDATE</span>) <span class="keyword">AND</span></span><br><span class="line">       Nvl(Flv.End_Date_Active, <span class="keyword">SYSDATE</span>)</span><br><span class="line">   <span class="keyword">AND</span> Flv.Lookup_Type = Fltv.Lookup_Type</span><br><span class="line">   <span class="keyword">AND</span> Fltv.View_Application_Id = Flv.View_Application_Id</span><br><span class="line">   <span class="keyword">AND</span> Fltv.Security_Group_Id = Flv.Security_Group_Id</span><br><span class="line"> <span class="keyword">WHERE</span> Fltv.Lookup_Type = <span class="string">'WIP_JOB_STATUS'</span> <span class="comment">--&amp;</span></span><br><span class="line">   <span class="keyword">AND</span> Fltv.View_Application_Id = <span class="number">700</span> <span class="comment">--&amp;</span></span><br><span class="line">   <span class="keyword">AND</span> Fltv.Security_Group_Id = <span class="number">0</span> <span class="comment">--&amp;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="APP.resources/EAB67BC8-2F6E-418F-B41F-7ABFA79B98DA.png" alt="d25e614393dd7f0b8b3e0cae5fee3e0a"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Flv.*</span><br><span class="line">  <span class="keyword">FROM</span> Apps.Fnd_Lookup_Values Flv</span><br><span class="line"> <span class="keyword">WHERE</span> Flv.Lookup_Type = <span class="string">'CSB_IAC_PROJECT_MAPPING'</span></span><br><span class="line">   <span class="keyword">AND</span> Flv.Language = <span class="string">'ZHS'</span></span><br><span class="line">   <span class="keyword">AND</span> Nvl(Flv.Enabled_Flag, <span class="string">'N'</span>) = <span class="string">'Y'</span></span><br><span class="line">   <span class="keyword">AND</span> <span class="keyword">SYSDATE</span> <span class="keyword">BETWEEN</span> Nvl(Flv.Start_Date_Active, <span class="keyword">SYSDATE</span>) <span class="keyword">AND</span></span><br><span class="line">       Nvl(Flv.End_Date_Active, <span class="keyword">SYSDATE</span>)</span><br><span class="line">   <span class="keyword">AND</span> Flv.Tag = <span class="string">'PROJ-SD'</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="币种"><a href="#币种" class="headerlink" title="币种"></a>币种</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Fc.Currency_Code          代码</span><br><span class="line">      ,Fct.Name                  名称</span><br><span class="line">      ,Fct.Description           说明</span><br><span class="line">      ,Fc.Issuing_Territory_Code 发行地区</span><br><span class="line">      ,Fc.Symbol                 符号</span><br><span class="line">      ,Fc.Precision              精度</span><br><span class="line">      ,Fc.Start_Date_Active      有效开始时间</span><br><span class="line">      ,Fc.End_Date_Active        有效结束时间</span><br><span class="line">  <span class="keyword">FROM</span> Apps.Fnd_Currencies Fc</span><br><span class="line">  <span class="keyword">JOIN</span> Apps.Fnd_Currencies_Tl Fct</span><br><span class="line">    <span class="keyword">ON</span> Fc.Currency_Code = Fct.Currency_Code</span><br><span class="line">   <span class="keyword">AND</span> Fct.Language = <span class="string">'ZHS'</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="APP.resources/C9A75BB2-E10D-45FC-9E71-C1CE80C9CEF1.png" alt="f4381a9aa5739a3a6d5f801aa56d34b7"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/EBS/INV/" rel="next" title="INV">
+                <i class="fa fa-chevron-left"></i> INV
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/EBS/AP/" rel="prev" title="AP">
+                AP <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDYzNC8yMTE2Mw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpeg" alt="Tation">
+            
+              <p class="site-author-name" itemprop="name">Tation</p>
+              <div class="site-description motion-element" itemprop="description">个人博客</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#弹性域"><span class="nav-number">1.</span> <span class="nav-text">弹性域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#说明性弹性域"><span class="nav-number">1.1.</span> <span class="nav-text">说明性弹性域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表关联"><span class="nav-number">1.2.</span> <span class="nav-text">表关联</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#键弹性域"><span class="nav-number">2.</span> <span class="nav-text">键弹性域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#表关联-1"><span class="nav-number">2.1.</span> <span class="nav-text">表关联</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#值集"><span class="nav-number">3.</span> <span class="nav-text">值集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安全性规则"><span class="nav-number">4.</span> <span class="nav-text">安全性规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速编码"><span class="nav-number">5.</span> <span class="nav-text">快速编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#币种"><span class="nav-number">6.</span> <span class="nav-text">币种</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tation</span>
+
+  
+
+  
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'EBS/APP/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
