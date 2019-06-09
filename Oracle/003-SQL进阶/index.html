@@ -96,31 +96,31 @@
 
   <meta name="description" content="字段约束约束类型：  UNIQUE (唯一性约束) NOT NULL (非空约束) CHECK (自定义约束) PRIMARY KEY (主键约束) FOREIGN KEY (外键约束)  外键策略：  默认：存在外键的主键表列数据不允许被删除 ON DELETE CASCADE：级联删除，主键表列数据被删除时，外键表对应列数据也被删除 ON DELETE  SET NULL：主键表列数据被删除时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="002-进阶">
-<meta property="og:url" content="https://tationgh.github.io/Oracle/002-进阶/index.html">
+<meta property="og:title" content="003-SQL进阶">
+<meta property="og:url" content="https://tationgh.github.io/Oracle/003-SQL进阶/index.html">
 <meta property="og:site_name" content="Tation">
 <meta property="og:description" content="字段约束约束类型：  UNIQUE (唯一性约束) NOT NULL (非空约束) CHECK (自定义约束) PRIMARY KEY (主键约束) FOREIGN KEY (外键约束)  外键策略：  默认：存在外键的主键表列数据不允许被删除 ON DELETE CASCADE：级联删除，主键表列数据被删除时，外键表对应列数据也被删除 ON DELETE  SET NULL：主键表列数据被删除时">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/6B47CBC9-299C-4AD0-84C8-A02998AEB455.png">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/87463E61-1BC5-4DBB-BD79-A52882AF35B0.png">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/8D9399DF-20E6-442A-8F24-4A6B239D393C.png">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/EA9EDEC3-0FFC-44A4-BCF1-6701BDEA4B42.png">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/537078FE-BF55-4B45-95FD-B5F5F5B3AD68.png">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/4EE6C622-1ED4-4502-A254-ABECDF0E3A1B.png">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/2AE35A2D-0163-443A-B640-E33207294F2D.png">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/5C5B700F-8D3C-467B-950F-377BFDAA6A3B.png">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/CB8E44AF-69CB-43CC-8EEB-F3292FC4DB22.png">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/D55D1D5C-8AE5-441C-9994-FF83CD3F6654.png">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/18901B8B-95BC-44A7-B2B1-BC4E16E7BF5B.png">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/D8A27772-F791-4FA5-A613-D31CE632054E.png">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/DFABE434-58B2-46F6-BE97-13EF9913BD80.png">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/9EBC7775-3829-4BF8-AFD4-DCF73CE73FFA.png">
-<meta property="og:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/F7BF0BE0-0FBA-49D0-AB4E-1A660FF150C9.png">
-<meta property="og:updated_time" content="2019-06-09T05:51:04.830Z">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/6B47CBC9-299C-4AD0-84C8-A02998AEB455.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/87463E61-1BC5-4DBB-BD79-A52882AF35B0.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/8D9399DF-20E6-442A-8F24-4A6B239D393C.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/EA9EDEC3-0FFC-44A4-BCF1-6701BDEA4B42.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/537078FE-BF55-4B45-95FD-B5F5F5B3AD68.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/4EE6C622-1ED4-4502-A254-ABECDF0E3A1B.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/2AE35A2D-0163-443A-B640-E33207294F2D.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/5C5B700F-8D3C-467B-950F-377BFDAA6A3B.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/CB8E44AF-69CB-43CC-8EEB-F3292FC4DB22.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/D55D1D5C-8AE5-441C-9994-FF83CD3F6654.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/18901B8B-95BC-44A7-B2B1-BC4E16E7BF5B.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/D8A27772-F791-4FA5-A613-D31CE632054E.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/DFABE434-58B2-46F6-BE97-13EF9913BD80.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/9EBC7775-3829-4BF8-AFD4-DCF73CE73FFA.png">
+<meta property="og:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/F7BF0BE0-0FBA-49D0-AB4E-1A660FF150C9.png">
+<meta property="og:updated_time" content="2019-06-09T14:28:09.843Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="002-进阶">
+<meta name="twitter:title" content="003-SQL进阶">
 <meta name="twitter:description" content="字段约束约束类型：  UNIQUE (唯一性约束) NOT NULL (非空约束) CHECK (自定义约束) PRIMARY KEY (主键约束) FOREIGN KEY (外键约束)  外键策略：  默认：存在外键的主键表列数据不允许被删除 ON DELETE CASCADE：级联删除，主键表列数据被删除时，外键表对应列数据也被删除 ON DELETE  SET NULL：主键表列数据被删除时">
-<meta name="twitter:image" content="https://tationgh.github.io/Oracle/002-进阶/002-%E8%BF%9B%E9%98%B6.resources/6B47CBC9-299C-4AD0-84C8-A02998AEB455.png">
+<meta name="twitter:image" content="https://tationgh.github.io/Oracle/003-SQL进阶/003-SQL%E8%BF%9B%E9%98%B6.resources/6B47CBC9-299C-4AD0-84C8-A02998AEB455.png">
 
 
 
@@ -128,7 +128,7 @@
 
   
   
-  <link rel="canonical" href="https://tationgh.github.io/Oracle/002-进阶/">
+  <link rel="canonical" href="https://tationgh.github.io/Oracle/003-SQL进阶/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>002-进阶 | Tation</title>
+  <title>003-SQL进阶 | Tation</title>
   
 
 
@@ -353,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tationgh.github.io/Oracle/002-进阶/">
+    <link itemprop="mainEntityOfPage" href="https://tationgh.github.io/Oracle/003-SQL进阶/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tation">
@@ -370,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">002-进阶
+          <h1 class="post-title" itemprop="name headline">003-SQL进阶
 
               
             
@@ -413,7 +413,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-09 13:51:04" itemprop="dateModified" datetime="2019-06-09T13:51:04+08:00">2019-06-09</time>
+                <time title="修改时间：2019-06-09 22:28:09" itemprop="dateModified" datetime="2019-06-09T22:28:09+08:00">2019-06-09</time>
               
             
           </span>
@@ -622,7 +622,7 @@
 <p>删除DBLINK</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> <span class="keyword">LINK</span> tablename_dbl;</span><br></pre></td></tr></table></figure>
 
-<p><img src="002-%E8%BF%9B%E9%98%B6.resources/6B47CBC9-299C-4AD0-84C8-A02998AEB455.png" alt="9fcbb32a8d46cf43165003b6346a1968"></p>
+<p><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/6B47CBC9-299C-4AD0-84C8-A02998AEB455.png" alt="9fcbb32a8d46cf43165003b6346a1968"></p>
 <h1 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h1><p>查询定时任务</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Uj.Job         唯一标示</span><br><span class="line">      ,Uj.Log_User    提交用户</span><br><span class="line">      ,Uj.Priv_User   赋予任务权限的用户</span><br><span class="line">      ,Uj.Schema_User 用户模式</span><br><span class="line">      ,Uj.Last_Date   最后运行时间</span><br><span class="line">      ,Uj.This_Date   正在运行时间</span><br><span class="line">      ,Uj.Next_Date   下一次运行时间</span><br><span class="line">      ,Uj.Total_Time  运行总时间</span><br><span class="line">      ,Uj.Broken      是否失效</span><br><span class="line">      ,Uj.Interval    运行时间间隔</span><br><span class="line">      ,Uj.Failures    失败次数</span><br><span class="line">      ,Uj.What        执行脚本</span><br><span class="line">      ,Uj.Nls_Env     环境参数</span><br><span class="line">  <span class="keyword">FROM</span> Sys.User_Jobs Uj;</span><br></pre></td></tr></table></figure>
 
@@ -632,23 +632,23 @@
 <h1 id="表链接"><a href="#表链接" class="headerlink" title="表链接"></a>表链接</h1><h2 id><a href="#" class="headerlink" title="(+)"></a>(+)</h2><p>外链接，与JION用法类似，区别在于不能实现多表外链接</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.Empno</span><br><span class="line">      ,a.Ename</span><br><span class="line">      ,a.Sal</span><br><span class="line">      ,b.*</span><br><span class="line">  <span class="keyword">FROM</span> Emp      a</span><br><span class="line">      ,Salgrade b</span><br><span class="line"> <span class="keyword">WHERE</span> a.Sal = b.Hisal(+) <span class="comment">--a表没(+)表示主表，没匹配上也要显示出来，b表列置空显示</span></span><br><span class="line">   <span class="keyword">AND</span> a.Deptno = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
 
-<p><img src="002-%E8%BF%9B%E9%98%B6.resources/87463E61-1BC5-4DBB-BD79-A52882AF35B0.png" alt="bdda7f7d47673e754de161bc15221b33"></p>
-<h2 id="JOIN"><a href="#JOIN" class="headerlink" title="JOIN"></a>JOIN</h2><p>LEFT JOIN<br>左外连接（LEFT OUTER JOIN 或 LEFT JOIN ）<br><img src="002-%E8%BF%9B%E9%98%B6.resources/8D9399DF-20E6-442A-8F24-4A6B239D393C.png" alt="ecc345049e6ffdb763a578e3a175329e"></p>
+<p><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/87463E61-1BC5-4DBB-BD79-A52882AF35B0.png" alt="bdda7f7d47673e754de161bc15221b33"></p>
+<h2 id="JOIN"><a href="#JOIN" class="headerlink" title="JOIN"></a>JOIN</h2><p>LEFT JOIN<br>左外连接（LEFT OUTER JOIN 或 LEFT JOIN ）<br><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/8D9399DF-20E6-442A-8F24-4A6B239D393C.png" alt="ecc345049e6ffdb763a578e3a175329e"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.Empno</span><br><span class="line">      ,a.Ename</span><br><span class="line">      ,a.Sal</span><br><span class="line">      ,b.*</span><br><span class="line">  <span class="keyword">FROM</span> Emp a</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Salgrade b</span><br><span class="line">    <span class="keyword">ON</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line">   <span class="keyword">AND</span> a.Sal = b.Hisal</span><br><span class="line"> <span class="keyword">WHERE</span> a.Deptno = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
 
-<p><img src="002-%E8%BF%9B%E9%98%B6.resources/EA9EDEC3-0FFC-44A4-BCF1-6701BDEA4B42.png" alt="5c4dc14361663f7724f6e8c620d6b1d9"><br>RIGHT JOIN<br>右外连接（RIGHT OUTER JOIN 或 RIGHT JOIN）<br><img src="002-%E8%BF%9B%E9%98%B6.resources/537078FE-BF55-4B45-95FD-B5F5F5B3AD68.png" alt="a6b8243e64c0effa97c800338b31a540"></p>
+<p><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/EA9EDEC3-0FFC-44A4-BCF1-6701BDEA4B42.png" alt="5c4dc14361663f7724f6e8c620d6b1d9"><br>RIGHT JOIN<br>右外连接（RIGHT OUTER JOIN 或 RIGHT JOIN）<br><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/537078FE-BF55-4B45-95FD-B5F5F5B3AD68.png" alt="a6b8243e64c0effa97c800338b31a540"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.Empno</span><br><span class="line">      ,a.Ename</span><br><span class="line">      ,a.Sal</span><br><span class="line">      ,b.*</span><br><span class="line">  <span class="keyword">FROM</span> Emp a</span><br><span class="line"> <span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> Salgrade b</span><br><span class="line">    <span class="keyword">ON</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line">   <span class="keyword">AND</span> a.Sal = b.Hisal</span><br><span class="line"> <span class="keyword">WHERE</span> a.Deptno = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
 
-<p><img src="002-%E8%BF%9B%E9%98%B6.resources/4EE6C622-1ED4-4502-A254-ABECDF0E3A1B.png" alt="9c347275f7c12a118eb05c5c5dcdd3e5"><br>INNER JOIN<br>内连接，取两表交集（INNER JOIN 或 JOIN）<br><img src="002-%E8%BF%9B%E9%98%B6.resources/2AE35A2D-0163-443A-B640-E33207294F2D.png" alt="23e537ab2d2fbcda5aedcc235e1653e7"></p>
+<p><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/4EE6C622-1ED4-4502-A254-ABECDF0E3A1B.png" alt="9c347275f7c12a118eb05c5c5dcdd3e5"><br>INNER JOIN<br>内连接，取两表交集（INNER JOIN 或 JOIN）<br><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/2AE35A2D-0163-443A-B640-E33207294F2D.png" alt="23e537ab2d2fbcda5aedcc235e1653e7"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.Empno</span><br><span class="line">      ,a.Ename</span><br><span class="line">      ,a.Sal</span><br><span class="line">      ,b.*</span><br><span class="line">  <span class="keyword">FROM</span> Emp a</span><br><span class="line"> <span class="keyword">INNER</span> <span class="keyword">JOIN</span> Salgrade b</span><br><span class="line">    <span class="keyword">ON</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line">   <span class="keyword">AND</span> a.Sal = b.Hisal</span><br><span class="line"> <span class="keyword">WHERE</span> a.Deptno = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
 
-<p><img src="002-%E8%BF%9B%E9%98%B6.resources/5C5B700F-8D3C-467B-950F-377BFDAA6A3B.png" alt="c5b45b17290673275153f33be391a53c"><br>FULL JOIN<br>全连接,取两表并集（FULL OUTER JOIN 或 FULL JOIN）<br><img src="002-%E8%BF%9B%E9%98%B6.resources/CB8E44AF-69CB-43CC-8EEB-F3292FC4DB22.png" alt="25ce88620ce24bce8b9e727c847eb67e"></p>
+<p><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/5C5B700F-8D3C-467B-950F-377BFDAA6A3B.png" alt="c5b45b17290673275153f33be391a53c"><br>FULL JOIN<br>全连接,取两表并集（FULL OUTER JOIN 或 FULL JOIN）<br><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/CB8E44AF-69CB-43CC-8EEB-F3292FC4DB22.png" alt="25ce88620ce24bce8b9e727c847eb67e"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.Empno</span><br><span class="line">      ,a.Ename</span><br><span class="line">      ,a.Sal</span><br><span class="line">      ,b.*</span><br><span class="line">  <span class="keyword">FROM</span> Emp a</span><br><span class="line">  <span class="keyword">FULL</span> <span class="keyword">JOIN</span> Salgrade b</span><br><span class="line">    <span class="keyword">ON</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line">   <span class="keyword">AND</span> a.Sal = b.Hisal;</span><br></pre></td></tr></table></figure>
 
-<p><img src="002-%E8%BF%9B%E9%98%B6.resources/D55D1D5C-8AE5-441C-9994-FF83CD3F6654.png" alt="d626d862b5f52c4e211aaa1af33bc06b"><br>全连接,取两表无交集<br><img src="002-%E8%BF%9B%E9%98%B6.resources/18901B8B-95BC-44A7-B2B1-BC4E16E7BF5B.png" alt="fbdcecb3b2383ad4ae457f56d62d7bc8"></p>
+<p><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/D55D1D5C-8AE5-441C-9994-FF83CD3F6654.png" alt="d626d862b5f52c4e211aaa1af33bc06b"><br>全连接,取两表无交集<br><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/18901B8B-95BC-44A7-B2B1-BC4E16E7BF5B.png" alt="fbdcecb3b2383ad4ae457f56d62d7bc8"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.Empno</span><br><span class="line">      ,a.Ename</span><br><span class="line">      ,a.Sal</span><br><span class="line">      ,b.*</span><br><span class="line">  <span class="keyword">FROM</span> Emp a</span><br><span class="line">  <span class="keyword">FULL</span> <span class="keyword">JOIN</span> Salgrade b</span><br><span class="line">    <span class="keyword">ON</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line">   <span class="keyword">AND</span> a.Sal = b.Hisal</span><br><span class="line"> <span class="keyword">WHERE</span> a.Sal <span class="keyword">IS</span> <span class="literal">NULL</span></span><br><span class="line">    <span class="keyword">OR</span> b.Hisal <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
 
-<p><img src="002-%E8%BF%9B%E9%98%B6.resources/D8A27772-F791-4FA5-A613-D31CE632054E.png" alt="70e784d1836ea5032c63f21d7608d2e4"><br>CROSS JOIN<br>交叉连接(CROSS JOIN)：结果集是个笛卡尔乘积</p>
+<p><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/D8A27772-F791-4FA5-A613-D31CE632054E.png" alt="70e784d1836ea5032c63f21d7608d2e4"><br>CROSS JOIN<br>交叉连接(CROSS JOIN)：结果集是个笛卡尔乘积</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> e.Empno</span><br><span class="line">      ,e.Ename</span><br><span class="line">      ,e.Sal</span><br><span class="line">      ,s.*</span><br><span class="line">  <span class="keyword">FROM</span> Emp e</span><br><span class="line"> <span class="keyword">CROSS</span> <span class="keyword">JOIN</span> Salgrade s;</span><br></pre></td></tr></table></figure>
 
 <h2 id="UNION"><a href="#UNION" class="headerlink" title="UNION"></a>UNION</h2><p>取并集</p>
@@ -656,13 +656,13 @@
 <li>UNION ：结果集去除重复记录</li>
 <li>UNION ALL：结果集保留重复记录</li>
 </ul>
-<p><img src="002-%E8%BF%9B%E9%98%B6.resources/DFABE434-58B2-46F6-BE97-13EF9913BD80.png" alt="bf527b40daccdb3dd53775f22275d014"></p>
+<p><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/DFABE434-58B2-46F6-BE97-13EF9913BD80.png" alt="bf527b40daccdb3dd53775f22275d014"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> e.Ename</span><br><span class="line">      ,e.Empno</span><br><span class="line">  <span class="keyword">FROM</span> Emp e</span><br><span class="line"> <span class="keyword">WHERE</span> e.Sal &gt; <span class="number">1500</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> e.Ename</span><br><span class="line">      ,e.Empno</span><br><span class="line">  <span class="keyword">FROM</span> Emp e</span><br><span class="line"> <span class="keyword">WHERE</span> e.Deptno &lt;&gt; <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
 
-<h2 id="INTERSECT"><a href="#INTERSECT" class="headerlink" title="INTERSECT"></a>INTERSECT</h2><p>取交集<br><img src="002-%E8%BF%9B%E9%98%B6.resources/9EBC7775-3829-4BF8-AFD4-DCF73CE73FFA.png" alt="4e78c64e6110c780aba13fe0bb2631b2"></p>
+<h2 id="INTERSECT"><a href="#INTERSECT" class="headerlink" title="INTERSECT"></a>INTERSECT</h2><p>取交集<br><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/9EBC7775-3829-4BF8-AFD4-DCF73CE73FFA.png" alt="4e78c64e6110c780aba13fe0bb2631b2"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> e.Deptno</span><br><span class="line">  <span class="keyword">FROM</span> Emp e</span><br><span class="line"> <span class="keyword">WHERE</span> e.Hiredate &gt; <span class="keyword">To_Date</span>(<span class="string">'1982/1/23'</span>, <span class="string">'YYYY-MM-DD HH24:MI:SS'</span>)</span><br><span class="line"><span class="keyword">INTERSECT</span></span><br><span class="line"><span class="keyword">SELECT</span> d.Deptno</span><br><span class="line">  <span class="keyword">FROM</span> Dept d;</span><br></pre></td></tr></table></figure>
 
-<h2 id="MINUS"><a href="#MINUS" class="headerlink" title="MINUS"></a>MINUS</h2><p>取差集<br><img src="002-%E8%BF%9B%E9%98%B6.resources/F7BF0BE0-0FBA-49D0-AB4E-1A660FF150C9.png" alt="962dedfe6f45e1e5425c085acf3fd7d9"></p>
+<h2 id="MINUS"><a href="#MINUS" class="headerlink" title="MINUS"></a>MINUS</h2><p>取差集<br><img src="003-SQL%E8%BF%9B%E9%98%B6.resources/F7BF0BE0-0FBA-49D0-AB4E-1A660FF150C9.png" alt="962dedfe6f45e1e5425c085acf3fd7d9"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> d.Deptno <span class="keyword">FROM</span> Dept d <span class="keyword">MINUS</span> <span class="keyword">SELECT</span> e.Deptno <span class="keyword">FROM</span> Emp e;</span><br></pre></td></tr></table></figure>
 
 <h1 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h1><p>触发器记录表操作日志</p>
@@ -696,8 +696,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Oracle/003-函数/" rel="next" title="003-函数">
-                <i class="fa fa-chevron-left"></i> 003-函数
+              <a href="/Oracle/002-进阶/" rel="next" title="002-进阶">
+                <i class="fa fa-chevron-left"></i> 002-进阶
               </a>
             
           </div>
@@ -706,8 +706,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Oracle/003-SQL进阶/" rel="prev" title="003-SQL进阶">
-                003-SQL进阶 <i class="fa fa-chevron-right"></i>
+              <a href="/Oracle/002-SQL基础/" rel="prev" title="002-SQL基础">
+                002-SQL基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1035,7 +1035,7 @@
   
     <script>
   window.livereOptions = {
-    refer: 'Oracle/002-进阶/'
+    refer: 'Oracle/003-SQL进阶/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
