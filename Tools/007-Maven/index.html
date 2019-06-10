@@ -120,7 +120,7 @@
 <meta property="og:image" content="https://tationgh.github.io/Tools/007-Maven/007-Maven.resources/CB58B621-481F-43B0-8936-1F9C85ED6155.png">
 <meta property="og:image" content="https://tationgh.github.io/Tools/007-Maven/007-Maven.resources/D0B8DEB4-6CA0-418A-8131-D9876716372C.png">
 <meta property="og:image" content="https://tationgh.github.io/Tools/007-Maven/007-Maven.resources/EFD86B6E-EF7A-4035-8896-6C9B1131C07C.png">
-<meta property="og:updated_time" content="2019-06-09T07:54:13.594Z">
+<meta property="og:updated_time" content="2019-06-10T14:40:41.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="007-Maven">
 <meta name="twitter:description" content="简介Maven项目对象模型(POM、Project Object Model)，主要服务于基于Java平台的项目构建，依赖管理和项目信息管理。Maven的核心功能便是合理叙述项目间的依赖关系。 项目构建理想的项目构建是高度自动化，跨平台，可重用的组件，标准化的，使用maven就可以帮我们完成上述所说的项目构建过程。 依赖管理 假如正在开发项目A和B，A依赖于B中的某些类，那么如何维系这种依赖关系呢">
@@ -417,7 +417,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-09 15:54:13" itemprop="dateModified" datetime="2019-06-09T15:54:13+08:00">2019-06-09</time>
+                <time title="修改时间：2019-06-10 22:40:41" itemprop="dateModified" datetime="2019-06-10T22:40:41+08:00">2019-06-10</time>
               
             
           </span>
@@ -542,7 +542,7 @@
 <ul>
 <li>本地仓库：Maven会将工程中依赖的构件(Jar包)从远程下载到本机一个目录下，默认的仓库是在：$user.home/.m2/repository，如：C:\Users\ZTS.m2\repository</li>
 <li>第三方仓库：又称为内部中心仓库，也称为私服，一般是由公司自己设立的，只为本公司内部共享使用。它既可以作为公司内部构件协作和存档，也可作为公用类库镜像缓存，减少在外部访问和下载的频率。私服可以使用的是局域网，所以一般公司都会创建这种第三方仓库，保证项目开发时，项目所需用的jar都从该仓库中拿，每个人的版本就都一样。</li>
-<li>远程中心仓库：Maven内置了远程公用仓库：<a href="http://repo1.maven.org/maven2，这个公共仓库是由Maven自己维护，里面有大量的常用类库，并包含了世界上大部分流行的开源项目构件。工程依赖的jar包如果本地仓库没有，默认从中央仓库下载" target="_blank" rel="noopener">http://repo1.maven.org/maven2，这个公共仓库是由Maven自己维护，里面有大量的常用类库，并包含了世界上大部分流行的开源项目构件。工程依赖的jar包如果本地仓库没有，默认从中央仓库下载</a></li>
+<li>远程中心仓库：Maven内置了远程公用仓库：<a href="http://repo1.maven.org/maven2" target="_blank" rel="noopener">http://repo1.maven.org/maven2</a> ，这个公共仓库是由Maven自己维护，里面有大量的常用类库，并包含了世界上大部分流行的开源项目构件。工程依赖的jar包如果本地仓库没有，默认从中央仓库下载</li>
 </ul>
 <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><p>假设已经用IDEA创建了MAVEN项目，我们同时写了两个类用于测试，打开CMD命令行，进入项目根目录就可以执行Maven命令了<br><img src="007-Maven.resources/E7229EFB-64D2-4EBB-B901-2E375F5D3021.png" alt="ac81608d932595828052c37da33db41f"></p>
 <h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>编译时会跟据POM文件声明的依赖，自动下载各种依赖的jar包，编译成功后根目录多了一个target文件夹，目录下多了.class文件</p>
