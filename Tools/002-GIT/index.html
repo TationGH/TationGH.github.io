@@ -121,7 +121,8 @@
 <meta property="og:image" content="https://tationgh.github.io/Tools/002-GIT/002-GIT.resources/A69ADCDE-3CF9-4038-AEDB-47FDEDDDD8BB.png">
 <meta property="og:image" content="https://tationgh.github.io/Tools/002-GIT/002-GIT.resources/2BA796E6-96C6-46A3-842F-A2E3390D6882.png">
 <meta property="og:image" content="https://tationgh.github.io/Tools/002-GIT/002-GIT.resources/25BACAD5-7C82-4ABD-BF2B-F44DCD0DFF25.png">
-<meta property="og:updated_time" content="2019-06-09T01:26:55.274Z">
+<meta property="og:image" content="https://tationgh.github.io/Tools/002-GIT/002-GIT.resources/8C5759AA-EF83-4445-AAAB-E76FC691C522.png">
+<meta property="og:updated_time" content="2019-06-15T11:36:02.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="002-GIT">
 <meta name="twitter:description" content="版本控制简介集中式版本控制系统(SVN)版本库是集中存放在中央服务器的，而干活的时候，用的都是自己的电脑，所以要先从中央服务器取得最新的版本，然后开始干活，干完活了，再把自己的活推送给中央服务器。中央服务器就好比是一个图书馆，你要改一本书，必须先从图书馆借出来，然后回到家自己改，改完了，再放回图书馆。集中式版本控制系统最大的毛病就是必须联网才能工作。 分布式版本控制系统(GIT)分布式版本控制系统">
@@ -418,7 +419,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-09 09:26:55" itemprop="dateModified" datetime="2019-06-09T09:26:55+08:00">2019-06-09</time>
+                <time title="修改时间：2019-06-15 19:36:02" itemprop="dateModified" datetime="2019-06-15T19:36:02+08:00">2019-06-15</time>
               
             
           </span>
@@ -471,7 +472,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.3k</span>
+                <span title="本文字数">5.6k</span>
               
 
               
@@ -509,10 +510,19 @@
 <h2 id="分布式版本控制系统-GIT"><a href="#分布式版本控制系统-GIT" class="headerlink" title="分布式版本控制系统(GIT)"></a>分布式版本控制系统(GIT)</h2><p>分布式版本控制系统根本没有“中央服务器”，每个人的电脑上都是一个完整的版本库，这样工作的时候就不需要联网了。既然每个人电脑上都有一个完整的版本库，那多个人如何协作呢？比方说你在自己电脑上改了文件A，你的同事也在他的电脑上改了文件A，这时，你们俩之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。</p>
 <p>分布式版本控制系统的安全性要高很多，因为每个人电脑里都有完整的版本库，某一个人的电脑坏掉了不要紧，随便从其他人那里复制一个就可以了。</p>
 <p>在实际使用分布式版本控制系统的时候，其实很少在两人之间的电脑上推送版本库的修改，因为可能你们俩不在一个局域网内，两台电脑互相访问不了，也可能今天你的同事病了，他的电脑压根没有开机。因此，分布式版本控制系统通常也有一台充当“中央服务器”的电脑（GITHUB或GITLAB），但这个服务器的作用仅仅是用来方便“交换”大家的修改，没有它大家也一样干活，只是交换修改不方便而已。<br><img src="002-GIT.resources/2B76325D-D9D5-4F70-8968-2E27AB129BFB.png" alt="7fb6d77cc75d1c92645143593286f353"></p>
+<h1 id="初始设置"><a href="#初始设置" class="headerlink" title="初始设置"></a>初始设置</h1><p>下载<a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>，安装完找到Git下Git Bash或右键选择Git Bash Here都可以打开Git命令窗口<br>首先需要设置我们的全局名字邮箱，用来辨别我们的电脑，后续需要的话可以单独对仓库设置，在Git Bash窗口执行下面命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Your Name&quot;</span><br><span class="line">git config --global user.email &quot;email@example.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>查看name和email</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+
+<p>设置当前仓库name和email</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name &quot;username&quot; </span><br><span class="line">git config user.email &quot;useremail&quot;</span><br></pre></td></tr></table></figure>
+
 <h1 id="初始化本地仓库"><a href="#初始化本地仓库" class="headerlink" title="初始化本地仓库"></a>初始化本地仓库</h1><blockquote>
 <p>版本库又称为仓库，英文名repository，可以简单理解成一个文件夹，这个文件夹里面的所有文件都被Git管理起来，每个文件的修改、删除都能跟踪，以便任何时刻都可以追踪或者在还原。</p>
 </blockquote>
-<p>下载<a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>，安装完找到Git下Git Bash或右键选择Git Bash Here都可以打开Git命令窗口<br>切换到要初始化为仓库的文件夹，执行命令</p>
+<p>切换到要初始化为仓库的文件夹，执行命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
 
 <p><img src="002-GIT.resources/2970233D-B4D2-44E8-A9F8-28AC2CC6CDAF.png" alt="91058a1a25b6aeb49893e67642533150"><br>工作区：指初始化的目录<br>版本库：初始化后工作区下有一个隐藏目录.git，就是Git的版本库。版本库中有暂存区（Index），还有Git自动创建的第一个主分支master，以及指向master的指针HEAD。<br><img src="002-GIT.resources/3F155596-8548-4FC9-969F-0290A712CBF8.png" alt="9840f0fcc7cc28ec3b810f4d73fc85bf"></p>
@@ -610,7 +620,7 @@
 <p>打开冲突文件可以看到git将冲突内容用符号分割，内容大致如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">11111</span><br><span class="line">=======</span><br><span class="line">22222</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev</span><br></pre></td></tr></table></figure>
 
-<p>Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;标记出不同分支两个版本冲突的内容，我们修改保存其中一个版本后，就可以重新提交后合并</p>
+<p>Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;标记出不同分支两个版本冲突的内容，我们修改保存其中一个版本后，就可以重新提交后合并<br><img src="002-GIT.resources/8C5759AA-EF83-4445-AAAB-E76FC691C522.png" alt="f9136e15d9d05da25797a31643ff834f"></p>
 <h1 id="存储现场"><a href="#存储现场" class="headerlink" title="存储现场"></a>存储现场</h1><p>如果dev分支做了修改已add但不想commit，而此时需要用master开分支ISSUE-1修改BUG后提交，如果在ISSUE-1上修改会影响到工作区。可以把当前工作现场存储下来，工作区恢复到最后一次提交状态，等ISSUE提交完再恢复回来</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
 
@@ -815,7 +825,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#版本控制简介"><span class="nav-number">1.</span> <span class="nav-text">版本控制简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集中式版本控制系统-SVN"><span class="nav-number">1.1.</span> <span class="nav-text">集中式版本控制系统(SVN)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式版本控制系统-GIT"><span class="nav-number">1.2.</span> <span class="nav-text">分布式版本控制系统(GIT)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化本地仓库"><span class="nav-number">2.</span> <span class="nav-text">初始化本地仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看"><span class="nav-number">3.</span> <span class="nav-text">查看</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件操作"><span class="nav-number">4.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#撤销修改"><span class="nav-number">5.</span> <span class="nav-text">撤销修改</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#已修改，未暂存"><span class="nav-number">5.1.</span> <span class="nav-text">已修改，未暂存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#已暂存，未提交"><span class="nav-number">5.2.</span> <span class="nav-text">已暂存，未提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#已提交，未推送-版本回退"><span class="nav-number">5.3.</span> <span class="nav-text">已提交，未推送(版本回退)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#已推送"><span class="nav-number">5.4.</span> <span class="nav-text">已推送</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支管理"><span class="nav-number">6.</span> <span class="nav-text">分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分支操作"><span class="nav-number">6.1.</span> <span class="nav-text">分支操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程仓库"><span class="nav-number">7.</span> <span class="nav-text">远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过SHH验证"><span class="nav-number">7.1.</span> <span class="nav-text">通过SHH验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建远程仓库"><span class="nav-number">7.2.</span> <span class="nav-text">新建远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#克隆远程仓库"><span class="nav-number">7.3.</span> <span class="nav-text">克隆远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建分支"><span class="nav-number">7.4.</span> <span class="nav-text">新建分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看-1"><span class="nav-number">7.5.</span> <span class="nav-text">查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推送"><span class="nav-number">7.6.</span> <span class="nav-text">推送</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拉取"><span class="nav-number">7.7.</span> <span class="nav-text">拉取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决冲突"><span class="nav-number">7.8.</span> <span class="nav-text">解决冲突</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#存储现场"><span class="nav-number">8.</span> <span class="nav-text">存储现场</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标签管理"><span class="nav-number">9.</span> <span class="nav-text">标签管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#忽略文件"><span class="nav-number">10.</span> <span class="nav-text">忽略文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#版本控制简介"><span class="nav-number">1.</span> <span class="nav-text">版本控制简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集中式版本控制系统-SVN"><span class="nav-number">1.1.</span> <span class="nav-text">集中式版本控制系统(SVN)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式版本控制系统-GIT"><span class="nav-number">1.2.</span> <span class="nav-text">分布式版本控制系统(GIT)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始设置"><span class="nav-number">2.</span> <span class="nav-text">初始设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化本地仓库"><span class="nav-number">3.</span> <span class="nav-text">初始化本地仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看"><span class="nav-number">4.</span> <span class="nav-text">查看</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件操作"><span class="nav-number">5.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#撤销修改"><span class="nav-number">6.</span> <span class="nav-text">撤销修改</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#已修改，未暂存"><span class="nav-number">6.1.</span> <span class="nav-text">已修改，未暂存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#已暂存，未提交"><span class="nav-number">6.2.</span> <span class="nav-text">已暂存，未提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#已提交，未推送-版本回退"><span class="nav-number">6.3.</span> <span class="nav-text">已提交，未推送(版本回退)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#已推送"><span class="nav-number">6.4.</span> <span class="nav-text">已推送</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支管理"><span class="nav-number">7.</span> <span class="nav-text">分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分支操作"><span class="nav-number">7.1.</span> <span class="nav-text">分支操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程仓库"><span class="nav-number">8.</span> <span class="nav-text">远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过SHH验证"><span class="nav-number">8.1.</span> <span class="nav-text">通过SHH验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建远程仓库"><span class="nav-number">8.2.</span> <span class="nav-text">新建远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#克隆远程仓库"><span class="nav-number">8.3.</span> <span class="nav-text">克隆远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建分支"><span class="nav-number">8.4.</span> <span class="nav-text">新建分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看-1"><span class="nav-number">8.5.</span> <span class="nav-text">查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推送"><span class="nav-number">8.6.</span> <span class="nav-text">推送</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拉取"><span class="nav-number">8.7.</span> <span class="nav-text">拉取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决冲突"><span class="nav-number">8.8.</span> <span class="nav-text">解决冲突</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#存储现场"><span class="nav-number">9.</span> <span class="nav-text">存储现场</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标签管理"><span class="nav-number">10.</span> <span class="nav-text">标签管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#忽略文件"><span class="nav-number">11.</span> <span class="nav-text">忽略文件</span></a></li></ol></div>
             
 
           </div>
@@ -857,7 +867,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:27</span>
+    <span title="站点阅读时长">1:28</span>
   
 </div>
 
